@@ -5,21 +5,21 @@ body {
 }
 
 h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 h2 {
   font-size: 1.875rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 h3 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 h4 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: normal;
 }
