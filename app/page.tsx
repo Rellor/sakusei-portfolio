@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <main>
-        <h1>Sakusei Portfolio</h1>
+        <h1></h1>
       </main>
     </div>
   );
