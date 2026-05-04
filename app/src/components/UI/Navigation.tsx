@@ -3,17 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Button from "./button";
 
 export default function Navigation() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const hero = document.getElementById("hero");
-      if (hero) {
-        const heroBottom = hero.offsetTop + hero.offsetHeight;
-        setIsVisible(window.scrollY > heroBottom);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -22,21 +19,27 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-cream transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      } flex items-center px-6 py-4 max-w-7xl mx-auto`}
+      className={`${
+        isScrolled ? "backdrop-blur-sm" : "pt-10"
+      } fixed top-0 left-0 right-0 z-50 bg-black/90 transition-padding duration-300 px-18 py-5 flex items-center justify-between`}
     >
-      <Image src="/logo.png" alt="Logo" width={100} height={100} />
+      <Image src="/fullLogoLight.svg" alt="Logo" width={150} height={150} />
 
-      <ul className="absolute left-1/2 -translate-x-1/2 flex gap-6">
+      <ul className="flex gap-6 text-white">
         <li>
-          <Link href="/">Home</Link>
+          <Button text="Home" type="link" href="/" />
         </li>
         <li>
-          <Link href="/work">Work</Link>
+          <Button text="Cases" type="link" href="/work" />
         </li>
         <li>
-          <Link href="/contact">Contact</Link>
+          <Button text="Proces & prijzen" type="link" href="/prices" />
+        </li>
+        <li>
+          <Button text="Over ons" type="link" href="/about" />
+        </li>
+        <li>
+          <Button text="Contact" type="button" href="/contact" />
         </li>
       </ul>
     </nav>

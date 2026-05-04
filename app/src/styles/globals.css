@@ -5,13 +5,11 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: bold;
+  @apply text-5xl font-bold;
 }
 
 h2 {
-  font-size: 1.875rem;
-  font-weight: bold;
+  @apply text-3xl font-bold;
 }
 
 h3 {
