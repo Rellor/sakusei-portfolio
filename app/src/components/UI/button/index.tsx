@@ -5,6 +5,7 @@ interface ButtonProps {
   onClick?: () => void;
   href?: string;
   type: "button" | "link";
+  hasLine?: boolean;
 }
 
 export default function Button({
@@ -12,12 +13,13 @@ export default function Button({
   onClick,
   href,
   type = "button",
+  hasLine = false,
 }: ButtonProps) {
   const internalLink = href && href.startsWith("/") ? href : undefined;
   const buttonStyle =
-    "px-6 py-2.5 bg-red hover:bg-red/70 text-white text-sm uppercase transition-colors duration-300";
+    "px-6 py-2.5 bg-red hover:bg-red/70 text-white text-sm uppercase transition-colors duration-300 flex";
   const linkStyle =
-    "text-white/70 hover:text-white text-sm font-[500] uppercase transition-colors duration-300";
+    "text-white/55 hover:text-white text-[11px] font-[500] uppercase transition-colors duration-300 tracking-[2.5px] py-2.5 group flex";
   const usedStyle = type === "button" ? buttonStyle : linkStyle;
 
   if (onClick) {
@@ -31,7 +33,12 @@ export default function Button({
   if (internalLink) {
     return (
       <Link href={internalLink} className={usedStyle}>
-        {text}
+        <div className="flex gap-2 items-center">
+          {hasLine && (
+            <div className="h-px bg-white/55 w-4 group-hover:w-7 group-hover:bg-white transition-all duration-300" />
+          )}
+          <span>{text}</span>
+        </div>
       </Link>
     );
   }

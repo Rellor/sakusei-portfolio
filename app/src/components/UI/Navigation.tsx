@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import Button from "./button";
 
@@ -20,8 +19,8 @@ export default function Navigation() {
   return (
     <nav
       className={`${
-        isScrolled ? "backdrop-blur-sm" : "pt-10"
-      } fixed top-0 left-0 right-0 z-50 bg-black/90 transition-padding duration-300 px-18 py-5 flex items-center justify-between`}
+        isScrolled ? "backdrop-blur-sm bg-black/90" : "pt-10 bg-black/05"
+      } fixed top-0 left-0 right-0 z-50  transition-padding duration-300 px-18 py-5 flex items-center justify-between`}
     >
       <Image src="/fullLogoLight.svg" alt="Logo" width={150} height={150} />
 
