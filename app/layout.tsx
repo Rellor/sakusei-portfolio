@@ -3,6 +3,7 @@ import { Montserrat, Unica_One } from "next/font/google";
 import "./src/styles/theme.css";
 import "./src/styles/globals.css";
 import Navigation from "./src/components/UI/Navigation";
+import Cursor from "./src/components/UI/cursor";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -35,7 +36,10 @@ export default function RootLayout({
           <Navigation />
         </header>
         <main>
-          <div>{children}</div>
+          <div>
+            {/*<Cursor />*/}
+            {children}
+          </div>
         </main>
         <footer>
           <p> footer </p>

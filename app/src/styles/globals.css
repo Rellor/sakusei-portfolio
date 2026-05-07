@@ -2,6 +2,7 @@
 
 body {
   font-family: var(--font-montserrat), sans-serif;
+  cursor: none;
 }
 
 h1 {
@@ -36,4 +37,33 @@ h4 {
 
 .animate-marquee {
   animation: marquee 60s linear infinite;
+}
+
+/* center dot */
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  background: #98131a;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ring */
+.cursor-ring {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #98131a;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.5s ease-out;
 }
