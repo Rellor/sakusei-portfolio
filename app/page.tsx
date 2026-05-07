@@ -138,17 +138,20 @@ export default function Home() {
             <CaseItem
               title="Kapsalon prestige"
               category="brand film"
+              description="Authentieke brand film die de vakmanschap van de kapper zichtbaar maakt."
               src="cases/image-1.jpg"
               rowSpan={2}
             />
             <CaseItem
               title="Techflow B.V."
               category="Marketing"
+              description="Video campagne die IT-oplossingen begrijpelijk maakt voor beslissers."
               src="cases/image-2.jpg"
             />
             <CaseItem
               title="Tatoo studio ink"
               category="Social content"
+              description="Reeks van short-form content die de artistieke processen vastlegt."
               src="cases/image-3.jpg"
             />
           </ItemGrid>

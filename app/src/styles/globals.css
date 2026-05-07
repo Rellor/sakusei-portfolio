@@ -16,14 +16,15 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: normal;
   font-family: var(--font-unica), sans-serif;
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: normal;
+  font-family: var(--font-unica), sans-serif;
 }
 
 @keyframes marquee {
