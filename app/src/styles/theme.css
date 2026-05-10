@@ -17,5 +17,7 @@
       rgba(152, 20, 26, 0.08) 0%,
       transparent 100%
     );
+
   --font-montserrat: var(--font-montserrat);
+  --font-unica: var(--font-unica);
 }

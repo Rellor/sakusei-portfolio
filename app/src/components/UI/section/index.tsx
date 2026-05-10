@@ -2,7 +2,7 @@ type SectionProps = {
   background: "light" | "dark" | "red";
   fullWidth: boolean;
   children: React.ReactNode;
-  className: string;
+  className?: string;
 };
 
 export default function Section({

@@ -5,6 +5,8 @@ import Header from "./src/components/UI/header";
 import Section from "./src/components/UI/section";
 import ItemGrid from "./src/components/UI/itemGrid";
 import CaseItem from "./src/components/UI/caseItem";
+import StepItem from "./src/components/UI/stepItem";
+import { Check, Handshake, Lightbulb, SwitchCamera } from "lucide-react";
 
 const carouselWords: string[] = [
   "Videoproductie",
@@ -155,6 +157,60 @@ export default function Home() {
               src="cases/image-3.jpg"
             />
           </ItemGrid>
+        </Section>
+        <Section
+          background="light"
+          fullWidth={false}
+          className="flex flex-col gap-10"
+        >
+          <Header
+            title="Van idee tot impact."
+            subtitle="Hoe het werkt"
+            style="dark"
+          />
+          <ItemGrid cols={4}>
+            <StepItem
+              icon={<Handshake className="stroke-white" />}
+              amount={1}
+              title="Kennismaking"
+              description="We leren uw merk, doelen en doelgroep kennen."
+            />
+            <StepItem
+              icon={<Lightbulb className="stroke-white" />}
+              amount={2}
+              title="Concept"
+              description="Script, storyboard en strategie — wij regelen alles zodat u zich kunt focussen op uw bedrijf."
+            />
+            <StepItem
+              icon={<SwitchCamera className="stroke-white" />}
+              amount={3}
+              title="Productie"
+              description="Professionele opname met cinematische apparatuur. Van locatie tot licht — wij zorgen voor de perfecte shot."
+            />
+            <StepItem
+              icon={<Check className="stroke-white" />}
+              amount={4}
+              title="Oplevering"
+              description="Professionele montage, grading en muziek. Klaar voor publicatie op alle platforms die voor u relevant zijn."
+            />
+          </ItemGrid>
+        </Section>
+        <Section
+          className="text-white flex-col flex gap-8 items-center"
+          background="red"
+          fullWidth={false}
+        >
+          <h2>Klaar om op te vallen?</h2>
+          <p>
+            Plan vrijblijvend een kennismakingsgesprek. Wij luisteren, denken
+            mee en maken het zichtbaar.
+          </p>
+          <Button
+            text="Neem contact op"
+            type="button"
+            href="/contact"
+            color="light"
+          />
         </Section>
       </div>
     </div>

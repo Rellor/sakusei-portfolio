@@ -5,9 +5,10 @@ interface ButtonProps {
   text?: string;
   onClick?: () => void;
   href?: string;
-  type: "button" | "link" | "arrow";
+  type?: "button" | "link" | "arrow";
   hasLine?: boolean;
   className?: string;
+  color?: "dark" | "light" | "red";
 }
 
 export default function Button({
@@ -15,26 +16,70 @@ export default function Button({
   onClick,
   href,
   type = "button",
+  color = "red",
   hasLine = false,
   className,
 }: ButtonProps) {
   const internalLink = href && href.startsWith("/") ? href : undefined;
-  const buttonStyle =
-    "px-6 py-2.5 bg-red hover:bg-red/70 text-white text-sm uppercase transition-colors duration-300 flex w-fit";
-  const linkStyle =
-    "text-white/55 hover:text-white text-[11px] font-bold uppercase transition-colors duration-300 tracking-[2.5px] py-2.5 group flex w-fit";
-  const arrowStyle =
-    "p-3 bg-red group-hover:bg-red/70 text-white transition-colors duration-300 w-fit";
+
+  // Base styles
+  const buttonBase =
+    "px-6 py-2.5 text-[12px] tracking-[1px] font-bold uppercase transition-colors duration-300 flex w-fit";
+
+  const linkBase =
+    "text-[11px] font-bold uppercase transition-colors duration-300 tracking-[2.5px] py-2.5 group flex w-fit";
+
+  const arrowBase = "p-3 transition-colors duration-300 w-fit";
+
+  // Color variants
+  const colorStyles = {
+    red: {
+      button: "bg-red hover:bg-red/70 text-white",
+      link: "text-white/55 hover:text-white",
+      arrow: "bg-red hover:bg-red/70 text-white",
+      line: "bg-white/55 group-hover:bg-white",
+    },
+
+    dark: {
+      button: "bg-black hover:bg-black/70 text-white",
+      link: "text-white/55 hover:text-white",
+      arrow: "bg-black hover:bg-black/70 text-white",
+      line: "bg-white/55 group-hover:bg-white",
+    },
+
+    light: {
+      button: "bg-white hover:bg-white/70 text-red",
+      link: "text-red/55 hover:text-red",
+      arrow: "bg-white hover:bg-white/70 text-red",
+      line: "bg-red/55 group-hover:bg-red",
+    },
+  };
 
   const usedStyle =
-    type === "button" ? buttonStyle : type === "link" ? linkStyle : arrowStyle;
+    type === "button"
+      ? `${buttonBase} ${colorStyles[color].button}`
+      : type === "link"
+        ? `${linkBase} ${colorStyles[color].link}`
+        : `${arrowBase} ${colorStyles[color].arrow}`;
 
   const combinedClassName = `${usedStyle} ${className ?? ""}`;
+
+  const content = (
+    <div className="flex gap-2 items-center">
+      {hasLine && (
+        <div
+          className={`h-px w-4 group-hover:w-7 transition-all duration-300 ${colorStyles[color].line}`}
+        />
+      )}
+
+      <span>{type === "arrow" ? <ArrowRight /> : text}</span>
+    </div>
+  );
 
   if (onClick) {
     return (
       <button onClick={onClick} className={combinedClassName}>
-        {type === "arrow" ? <ArrowRight /> : text ? text : undefined}
+        {content}
       </button>
     );
   }
@@ -42,15 +87,7 @@ export default function Button({
   if (internalLink) {
     return (
       <Link href={internalLink} className={combinedClassName}>
-        <div className="flex gap-2 items-center">
-          {hasLine && (
-            <div className="h-px bg-white/55 w-4 group-hover:w-7 group-hover:bg-white transition-all duration-300" />
-          )}
-          <span>
-            {" "}
-            {type === "arrow" ? <ArrowRight /> : text ? text : undefined}
-          </span>
-        </div>
+        {content}
       </Link>
     );
   }
@@ -58,20 +95,10 @@ export default function Button({
   if (href) {
     return (
       <a href={href} className={combinedClassName}>
-        {type === "arrow" ? <ArrowRight /> : text ? text : undefined}
+        {content}
       </a>
     );
   }
 
-  return (
-    <div className={combinedClassName}>
-      <div className="flex gap-2 items-center">
-        {hasLine && (
-          <div className="h-px bg-white/55 w-4 group-hover:w-7 group-hover:bg-white transition-all duration-300" />
-        )}
-
-        <span>{type === "arrow" ? <ArrowRight /> : text}</span>
-      </div>
-    </div>
-  );
+  return <div className={combinedClassName}>{content}</div>;
 }
