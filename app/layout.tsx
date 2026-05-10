@@ -4,6 +4,7 @@ import "./src/styles/theme.css";
 import "./src/styles/globals.css";
 import Navigation from "./src/components/UI/Navigation";
 import Cursor from "./src/components/UI/cursor";
+import Footer from "./src/components/UI/footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -42,7 +43,7 @@ export default function RootLayout({
           </div>
         </main>
         <footer>
-          <p> footer </p>
+          <Footer />
         </footer>
       </body>
     </html>
