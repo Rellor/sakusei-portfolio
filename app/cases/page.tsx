@@ -66,14 +66,6 @@ export default function Cases() {
               hangen.
             </p>
           </div>
-
-          <Image
-            src="/visual.svg"
-            className="absolute right-[-5%] top-[30%] -translate-y-1/2 opacity-5 w-2xl"
-            alt="Logo"
-            width={150}
-            height={150}
-          />
         </div>
         <Section
           background="dark"
