@@ -8,6 +8,7 @@ type caseItemProps = {
   src?: string;
   className?: string;
   description: string;
+  aspectRatio?: "video" | "long";
 };
 
 export default function CaseItem({
@@ -16,6 +17,7 @@ export default function CaseItem({
   src,
   rowSpan,
   description,
+  aspectRatio = "video",
 }: caseItemProps) {
   const rowSpanClasses: Record<number, string> = {
     1: "row-span-1",
@@ -25,7 +27,11 @@ export default function CaseItem({
 
   const usedStyle = rowSpan
     ? `aspect-auto ${rowSpanClasses[rowSpan]}`
-    : "aspect-[560/400]";
+    : aspectRatio === "video"
+      ? "aspect-[560/400]"
+      : "aspect-3/4";
+
+  // TODO: Move aspect ratio logic to parent grid view
 
   return (
     <Link

@@ -18,6 +18,19 @@
       transparent 100%
     );
 
+  --background-image-gradient-hero-small:
+    radial-gradient(
+      ellipse at 70% 0%,
+      rgba(152, 20, 26, 0.18) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 10% 10%,
+      rgba(152, 20, 26, 0.08) 0%,
+      transparent 50%
+    ),
+    linear-gradient(to bottom, transparent 0%, #000 100%);
+
   --font-montserrat: var(--font-montserrat);
   --font-unica: var(--font-unica);
 }
