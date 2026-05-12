@@ -4,6 +4,7 @@ import Button from "../button";
 type caseItemProps = {
   category?: string;
   title: string;
+  slug: string;
   rowSpan?: number;
   src?: string;
   className?: string;
@@ -14,6 +15,7 @@ type caseItemProps = {
 export default function CaseItem({
   category,
   title,
+  slug,
   src,
   rowSpan,
   description,
@@ -35,13 +37,13 @@ export default function CaseItem({
 
   return (
     <Link
-      href="/"
+      href={`/cases/${slug}`}
       style={{
         backgroundImage: `url(${src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className={`${usedStyle} relative flex items-end p-10 group overflow-hidden`}
+      className={`${usedStyle} aspectStyle relative flex items-end p-10 group overflow-hidden`}
     >
       {/* Default gradient */}
       <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/50 to-transparent transition-opacity duration-300" />

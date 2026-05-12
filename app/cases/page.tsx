@@ -1,48 +1,8 @@
 import Button from "../src/components/UI/button";
-import Image from "next/image";
-import WordSlider from "../src/components/UI/wordSlider";
-import Header from "../src/components/UI/header";
 import Section from "../src/components/UI/section";
 import ItemGrid from "../src/components/UI/itemGrid";
 import CaseItem from "../src/components/UI/caseItem";
-import StepItem from "../src/components/UI/stepItem";
-import { Check, Handshake, Lightbulb, SwitchCamera } from "lucide-react";
-
-const carouselWords: string[] = [
-  "Videoproductie",
-  "Brand Films",
-  "Marketing Strategie",
-  "Cinematisch",
-  "Storytelling",
-  "Social Content",
-  "Vakmanschap",
-  "Videoproductie",
-  "Brand Films",
-  "Marketing Strategie",
-  "Cinematisch",
-  "Storytelling",
-  "Social Content",
-  "Vakmanschap",
-];
-
-const overItems = [
-  {
-    highlight: "100%",
-    description: "Van A tot Z geregeld",
-  },
-  {
-    highlight: "∞",
-    description: "Enso — oneindige creativiteit",
-  },
-  {
-    highlight: "4K",
-    description: "Cinematische kwaliteit",
-  },
-  {
-    highlight: "↑3×",
-    description: "Gemiddelde conversie groei",
-  },
-];
+import { detailedCases } from "../../data/cases";
 
 export default function Cases() {
   return (
@@ -72,56 +32,17 @@ export default function Cases() {
           fullWidth={false}
           className="flex flex-col gap-10"
         >
-          <ItemGrid cols={3}>
-            <CaseItem
-              aspectRatio="long"
-              title="Techflow B.V."
-              category="Marketing"
-              description="Video campagne die IT-oplossingen begrijpelijk maakt voor beslissers."
-              src="cases/image-2.jpg"
-            />
-            <CaseItem
-              aspectRatio="long"
-              title="Techflow B.V."
-              category="Marketing"
-              description="Video campagne die IT-oplossingen begrijpelijk maakt voor beslissers."
-              src="cases/image-2.jpg"
-            />
-            <CaseItem
-              aspectRatio="long"
-              title="Techflow B.V."
-              category="Marketing"
-              description="Video campagne die IT-oplossingen begrijpelijk maakt voor beslissers."
-              src="cases/image-2.jpg"
-            />
-            <CaseItem
-              aspectRatio="long"
-              title="Techflow B.V."
-              category="Marketing"
-              description="Video campagne die IT-oplossingen begrijpelijk maakt voor beslissers."
-              src="cases/image-2.jpg"
-            />
-            <CaseItem
-              aspectRatio="long"
-              title="Techflow B.V."
-              category="Marketing"
-              description="Video campagne die IT-oplossingen begrijpelijk maakt voor beslissers."
-              src="cases/image-2.jpg"
-            />
-            <CaseItem
-              aspectRatio="long"
-              title="Techflow B.V."
-              category="Marketing"
-              description="Video campagne die IT-oplossingen begrijpelijk maakt voor beslissers."
-              src="cases/image-2.jpg"
-            />
-            <CaseItem
-              aspectRatio="long"
-              title="Techflow B.V."
-              category="Marketing"
-              description="Video campagne die IT-oplossingen begrijpelijk maakt voor beslissers."
-              src="cases/image-2.jpg"
-            />
+          <ItemGrid aspectRatio="long" cols={3}>
+            {Object.values(detailedCases).map((c) => (
+              <CaseItem
+                key={c.button.slug}
+                slug={c.button.slug}
+                title={c.button.title}
+                category={c.project.type}
+                description={c.brief.description}
+                src={c.button.src}
+              />
+            ))}
           </ItemGrid>
         </Section>
         <Section

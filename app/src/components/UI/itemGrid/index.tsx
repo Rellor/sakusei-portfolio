@@ -2,6 +2,7 @@ type ItemGridProps = {
   cols: 1 | 2 | 3 | 4 | 5 | 6;
   className?: string;
   children: React.ReactNode;
+  aspectRatio?: "video" | "long";
 };
 
 const gridColsMap = {
@@ -17,6 +18,7 @@ export default function ItemGrid({
   cols,
   children,
   className = "",
+  aspectRatio,
 }: ItemGridProps) {
   const combinedClassName = `
     grid
@@ -24,6 +26,8 @@ export default function ItemGrid({
     auto-rows-fr
     ${gridColsMap[cols]}
     ${className}
+    ${aspectRatio === "video" ? "aspect-video" : ""}
+    ${aspectRatio === "long" ? "aspect-long" : ""}
   `;
 
   return <div className={combinedClassName}>{children}</div>;
