@@ -68,14 +68,20 @@ export default async function CasePage({ params }: Props) {
           <h5>{caseData.project.platforms.join(", ")}</h5>
         </div>
       </Section>
-      <Section background="light" fullWidth={true} noPadding={true}>
+      <Section
+        background="dark"
+        fullWidth={false}
+        noPadding={false}
+        className="flex gap-8 justify-between"
+      >
         <Header
           title="Wat de klant wilde."
           subtitle="De opdracht"
-          style="dark"
+          style="light"
           type="h3"
           isSubHeading={true}
         />
+        <p className="text-white/55 max-w-2xl">{caseData.brief.description}</p>
       </Section>
     </div>
   );

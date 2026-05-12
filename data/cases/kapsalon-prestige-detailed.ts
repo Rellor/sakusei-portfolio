@@ -19,7 +19,7 @@ export const kapsalonPrestigeCase = {
   brief: {
     title: "Brand film · 2024",
     description:
-      "Promotiefilm voor Kapsalon Prestige. Voeg hier een korte briefing toe.",
+      "Kapsalon Prestige is een premium kapperszaak in Amsterdam die bekend staat om zijn vakmanschap en persoonlijke aanpak. De eigenaar wilde een brand film die niet zomaar een reclamespot is — maar een eerlijk portret van de passie achter het werk. De wens: laat zien hoe een knipbeurt bij Prestige meer is dan een haarbeurt. Het is een ervaring, een ritueel, een moment van vertrouwen tussen kapper en klant. Authentiek, cinematisch en herkenbaar voor de doelgroep.",
   },
   process: [
     {
