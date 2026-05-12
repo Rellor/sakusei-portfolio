@@ -27,6 +27,12 @@ h4 {
   font-family: var(--font-unica), sans-serif;
 }
 
+h5 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  font-family: var(--font-unica), sans-serif;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);

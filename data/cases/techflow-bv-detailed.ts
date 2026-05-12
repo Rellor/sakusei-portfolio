@@ -4,6 +4,7 @@ export const techflowCase = {
     slug: "techflow-bv",
     title: "Techflow B.V.",
     src: "cases/image-2.jpg",
+    rowspan: 2,
   },
   client: {
     name: "Techflow B.V.",
@@ -13,7 +14,7 @@ export const techflowCase = {
     type: "Video campagne",
     year: 2025,
     duration: "1:30",
-    platforms: ["YouTube", "LinkedIn", "Website"],
+    platforms: ["YouTube", "LinkedIn"],
   },
   brief: {
     title: "Heldere IT-communicatie",

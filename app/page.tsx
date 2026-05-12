@@ -7,6 +7,7 @@ import ItemGrid from "./src/components/UI/itemGrid";
 import CaseItem from "./src/components/UI/caseItem";
 import StepItem from "./src/components/UI/stepItem";
 import { Check, Handshake, Lightbulb, SwitchCamera } from "lucide-react";
+import { detailedCases } from "../data/cases";
 
 const carouselWords: string[] = [
   "Videoproductie",
@@ -137,25 +138,17 @@ export default function Home() {
             link="/"
           />
           <ItemGrid cols={2}>
-            <CaseItem
-              title="Kapsalon prestige"
-              category="brand film"
-              description="Authentieke brand film die de vakmanschap van de kapper zichtbaar maakt."
-              src="cases/image-1.jpg"
-              rowSpan={2}
-            />
-            <CaseItem
-              title="Techflow B.V."
-              category="Marketing"
-              description="Video campagne die IT-oplossingen begrijpelijk maakt voor beslissers."
-              src="cases/image-2.jpg"
-            />
-            <CaseItem
-              title="Tatoo studio ink"
-              category="Social content"
-              description="Reeks van short-form content die de artistieke processen vastlegt."
-              src="cases/image-3.jpg"
-            />
+            {Object.values(detailedCases).map((c) => (
+              <CaseItem
+                key={c.button.slug}
+                slug={c.button.slug}
+                title={c.button.title}
+                category={c.project.type}
+                description={c.brief.description}
+                src={c.button.src}
+                rowSpan={c.button.rowspan}
+              />
+            ))}
           </ItemGrid>
         </Section>
         <Section
