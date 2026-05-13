@@ -28,7 +28,6 @@ export const techflowCase = {
     },
     { title: "Script", description: "Uitwerken van een helder script." },
     { title: "Opnames", description: "Filmen op locatie bij Techflow." },
-    { title: "Montage", description: "Editing en feedbackrondes." },
   ],
   whatWeDid: {
     title: "Onze aanpak",
@@ -37,16 +36,16 @@ export const techflowCase = {
   },
   effect: [
     {
-      title: "Meer leads",
-      description: "De video leverde direct nieuwe aanvragen op.",
+      title: "Bereik op Instagram",
+      data: "+340%",
     },
     {
-      title: "Betere uitleg",
-      description: "IT-diensten zijn nu duidelijker voor klanten.",
+      title: "Organische views (week 1)",
+      data: "18K",
     },
     {
-      title: "Sterker merk",
-      description: "Techflow wordt gezien als thought leader.",
+      title: "Nieuwe boekingen",
+      data: "+22%",
     },
   ],
   photos: {
@@ -59,6 +58,6 @@ export const techflowCase = {
     ],
   },
   video: {
-    url: "https://www.youtube.com/watch?v=xxxxxxx",
+    url: "https://www.youtube.com/embed/GYk14hnua8k?si=7oOeR-iLozebvfoi",
   },
 };

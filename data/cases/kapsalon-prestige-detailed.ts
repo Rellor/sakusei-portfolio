@@ -19,7 +19,7 @@ export const kapsalonPrestigeCase = {
   brief: {
     title: "Brand film · 2024",
     description:
-      "Kapsalon Prestige is een premium kapperszaak in Amsterdam die bekend staat om zijn vakmanschap en persoonlijke aanpak. De eigenaar wilde een brand film die niet zomaar een reclamespot is — maar een eerlijk portret van de passie achter het werk. De wens: laat zien hoe een knipbeurt bij Prestige meer is dan een haarbeurt. Het is een ervaring, een ritueel, een moment van vertrouwen tussen kapper en klant. Authentiek, cinematisch en herkenbaar voor de doelgroep.",
+      "Kapsalon Prestige is een premium kapperszaak in Amsterdam die bekend staat om zijn vakmanschap en persoonlijke aanpak. De eigenaar wilde een brand film die niet zomaar een reclamespot is — maar een eerlijk portret van de passie achter het werk. ## De wens: laat zien hoe een knipbeurt bij Prestige meer is dan een haarbeurt. Het is een ervaring, een ritueel, een moment van vertrouwen tussen kapper en klant. Authentiek, cinematisch en herkenbaar voor de doelgroep.",
   },
   process: [
     {
@@ -34,25 +34,24 @@ export const kapsalonPrestigeCase = {
       title: "Opnames",
       description: "Filmen op locatie bij Kapsalon Prestige.",
     },
-    {
-      title: "Montage",
-      description: "Editing en feedbackrondes.",
-    },
   ],
   whatWeDid: {
     title: "Onze aanpak",
-    description: "Van concept tot eindmontage, inclusief visuele storytelling.",
+    description:
+      "We kozen voor een documentaire-aanpak: minder geposeerd, meer echt. De camera volgde de eigenaar door zijn normale werkdag. We legden de kleine momenten vast — de concentratie in zijn ogen, het gebaar van de schaar, het gesprek met de klant. ## Het eindresultaat is een 2 minuten durende brand film die op Instagram werd ingezet als advertentie én als organische content. De reacties van volgers bevestigden wat we hoopten: mensen herkenden de warmte en het vakmanschap direct",
   },
   effect: [
     {
-      title: "Meer zichtbaarheid",
-      description:
-        "De brand film heeft de zichtbaarheid van de kapsalon vergroot.",
+      title: "Bereik op Instagram",
+      data: "+340%",
     },
     {
-      title: "Sterker merk",
-      description:
-        "Kapsalon Prestige wordt nu als modern en professioneel gezien.",
+      title: "Organische views (week 1)",
+      data: "18K",
+    },
+    {
+      title: "Nieuwe boekingen",
+      data: "+22%",
     },
   ],
   photos: {
@@ -67,7 +66,7 @@ export const kapsalonPrestigeCase = {
       "cases/kapsalon-prestige/bottom3.jpg",
     ],
   },
-  // video: {
-  //   url: "https://www.youtube.com/watch?v=...", // Voeg toe indien van toepassing
-  // },
+  video: {
+    url: "https://www.youtube.com/embed/GYk14hnua8k?si=7oOeR-iLozebvfoi",
+  },
 };

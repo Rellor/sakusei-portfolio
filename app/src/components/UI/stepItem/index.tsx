@@ -1,8 +1,10 @@
 type StepItemProps = {
-  icon: React.ReactNode;
-  amount: number;
+  icon?: React.ReactNode;
+  amount: number | null;
   title: string;
-  description: string;
+  description?: string;
+  data?: string;
+  style?: "light" | "dark";
 };
 
 export default function StepItem({
@@ -10,23 +12,33 @@ export default function StepItem({
   amount,
   title,
   description,
+  style = "light",
+  data,
 }: StepItemProps) {
   return (
-    <div className="w-full bg-white hover:bg-black transition-all duration-300 group p-8">
+    <div
+      className={`w-full ${style === "light" ? "bg-white hover:bg-black" : "bg-gray hover:bg-gray-light hover:border-l-2 hover:border-red"} transition-all duration-300 group p-8`}
+    >
       <div className="flex gap-4 justify-between items-center">
-        <div className="bg-red aspect-square h-10 flex items-center justify-center">
-          {icon}
-        </div>
+        {icon && (
+          <div className="bg-red aspect-square h-10 flex items-center justify-center">
+            {icon}
+          </div>
+        )}
 
-        <span className="text-red/50 text-7xl font-unica">
-          {String(amount).padStart(2, "0")}
-        </span>
+        {amount !== null && (
+          <span className="text-red/50 text-5xl font-unica">
+            {String(amount).padStart(2, "0")}
+          </span>
+        )}
       </div>
 
-      <div className="text-black group-hover:text-white transition-all duration-300">
-        <h3>{title}</h3>
-
-        <p className="opacity-55">{description}</p>
+      <div
+        className={`${style === "light" ? "text-black group-hover:text-white" : "text-white"} transition-all duration-300 ${data && "text-center"}`}
+      >
+        {data && <h3 className="text-red text-5xl!">{data}</h3>}
+        <h4 className={`text-2xl! ${data && "opacity-60"}`}>{title}</h4>
+        {description && <p className="opacity-55">{description}</p>}
       </div>
     </div>
   );

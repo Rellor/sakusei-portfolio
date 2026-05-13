@@ -34,10 +34,6 @@ export const tattooStudioInkCase = {
       title: "Montage",
       description: "Editing van korte, pakkende video's voor social media.",
     },
-    {
-      title: "Publicatie",
-      description: "Verspreiden van de content op relevante platforms.",
-    },
   ],
   whatWeDid: {
     title: "Onze aanpak",
@@ -46,14 +42,16 @@ export const tattooStudioInkCase = {
   },
   effect: [
     {
-      title: "Grotere online zichtbaarheid",
-      description:
-        "De studio heeft meer volgers en interactie op social media.",
+      title: "Bereik op Instagram",
+      data: "+340%",
     },
     {
-      title: "Artistieke positionering",
-      description:
-        "De unieke stijl van de artiesten wordt duidelijker gecommuniceerd.",
+      title: "Organische views (week 1)",
+      data: "18K",
+    },
+    {
+      title: "Nieuwe boekingen",
+      data: "+22%",
     },
   ],
   photos: {
@@ -68,7 +66,7 @@ export const tattooStudioInkCase = {
       "cases/tattoo-studio-ink/bottom3.jpg",
     ],
   },
-  // video: {
-  //   url: "https://www.youtube.com/watch?v=...", // Voeg toe indien van toepassing
-  // },
+  video: {
+    url: "https://www.youtube.com/embed/GYk14hnua8k?si=7oOeR-iLozebvfoi",
+  },
 };

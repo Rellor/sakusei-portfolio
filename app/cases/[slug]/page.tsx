@@ -2,6 +2,9 @@ import { notFound } from "next/navigation";
 import Section from "../../src/components/UI/section";
 import { detailedCases } from "../../../data/cases";
 import Header from "@/app/src/components/UI/header";
+import ItemGrid from "@/app/src/components/UI/itemGrid";
+import StepItem from "@/app/src/components/UI/stepItem";
+import Button from "@/app/src/components/UI/button";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -22,6 +25,12 @@ export default async function CasePage({ params }: Props) {
   if (!caseData) {
     notFound();
   }
+
+  // Find next case for navigation
+  const casesArr = Object.values(detailedCases);
+  const currentIdx = casesArr.findIndex((c) => c.button.slug === slug);
+  const nextIdx = (currentIdx + 1) % casesArr.length;
+  const nextCase = casesArr[nextIdx];
 
   return (
     <div>
@@ -81,7 +90,171 @@ export default async function CasePage({ params }: Props) {
           type="h3"
           isSubHeading={true}
         />
-        <p className="text-white/55 max-w-2xl">{caseData.brief.description}</p>
+
+        {caseData.brief.description.includes("##") ? (
+          <div className="flex flex-col gap-2 max-w-2xl">
+            {caseData.brief.description.split("##").map((part, idx) => (
+              <p className="text-white/55" key={idx}>
+                {part.trim()}
+              </p>
+            ))}
+          </div>
+        ) : (
+          <p className="text-white/55 max-w-2xl">
+            {caseData.brief.description}
+          </p>
+        )}
+      </Section>
+      <Section
+        background="dark"
+        fullWidth={false}
+        noPadding={true}
+        className="flex flex-col gap-8 justify-between"
+      >
+        <p className="text-red flex gap-2 uppercase tracking-[2px] text-[10px] font-semibold items-center">
+          <span className="w-4 h-px bg-red" />
+          Sfeerimpressie
+        </p>
+        <div className="space-y-1 w-full">
+          <div className="grid grid-cols-3 grid-rows-2 gap-1">
+            <div className="bg-gray col-span-2 row-span-2 w-full h-full" />
+
+            <div className="bg-gray aspect-square w-full" />
+
+            <div className="bg-gray aspect-square w-full" />
+          </div>
+
+          <div className="grid grid-cols-3 gap-1">
+            <div className="bg-gray aspect-4/3 w-full" />
+
+            <div className="bg-gray aspect-4/3 w-full" />
+
+            <div className="bg-gray aspect-4/3 w-full" />
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        background="dark"
+        fullWidth={false}
+        noPadding={false}
+        className="flex flex-col gap-8 justify-between"
+      >
+        <Header
+          title="Het proces."
+          subtitle="Hoe we dit hebben aangepakt"
+          style="light"
+          type="h3"
+          isSubHeading={true}
+        />
+        <ItemGrid cols={3}>
+          {caseData.process.map((step, index) => (
+            <StepItem
+              key={index}
+              style="dark"
+              amount={index + 1}
+              title={step.title}
+              description={step.description}
+            />
+          ))}
+        </ItemGrid>
+      </Section>
+
+      <Section
+        background="dark"
+        fullWidth={false}
+        noPadding={false}
+        className="flex gap-8 justify-between"
+      >
+        <Header
+          title="Wat we hebben gedaan."
+          subtitle="Onze aanpak"
+          style="light"
+          type="h3"
+          isSubHeading={true}
+        />
+        {caseData.whatWeDid.description.includes("##") ? (
+          <div className="flex flex-col gap-2 max-w-2xl">
+            {caseData.whatWeDid.description.split("##").map((part, idx) => (
+              <p className="text-white/55" key={idx}>
+                {part.trim()}
+              </p>
+            ))}
+          </div>
+        ) : (
+          <p className="text-white/55 max-w-2xl">
+            {caseData.whatWeDid.description}
+          </p>
+        )}
+      </Section>
+
+      <Section
+        background="dark"
+        fullWidth={false}
+        noPadding={false}
+        className="flex flex-col gap-8 justify-between"
+      >
+        <Header
+          title="Het effect."
+          subtitle="resultaten"
+          style="light"
+          type="h3"
+          isSubHeading={true}
+        />
+        <ItemGrid cols={3}>
+          {caseData.effect.map((step, index) => (
+            <StepItem
+              key={index}
+              style="dark"
+              amount={null}
+              title={step.title}
+              data={step.data}
+            />
+          ))}
+        </ItemGrid>
+      </Section>
+
+      <Section
+        background="dark"
+        fullWidth={false}
+        noPadding={true}
+        className="flex flex-col gap-8 justify-between pb-32"
+      >
+        <p className="text-red flex gap-2 uppercase tracking-[2px] text-[10px] font-semibold items-center">
+          <span className="w-4 h-px bg-red" />
+          Bekijk het eindresultaat.
+        </p>
+        <div className="w-full aspect-video rounded-lg overflow-hidden border border-white/10">
+          <iframe
+            width="100%"
+            height="100%"
+            src={caseData.video.url}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Section>
+
+      <Section
+        background="light"
+        fullWidth={false}
+        noPadding={true}
+        className="flex flex-col gap-8 justify-between py-12"
+      >
+        <Header
+          title={nextCase.client.name}
+          subtitle="Volgende case"
+          style="dark"
+          type="h3"
+          isSubHeading={true}
+          noLine={true}
+        />
+        <Button
+          text={`Bekijk ${nextCase.button.title}`}
+          href={`/cases/${nextCase.button.slug}`}
+          color="dark"
+        ></Button>
       </Section>
     </div>
   );

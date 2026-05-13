@@ -5,6 +5,7 @@ type HeaderProps = {
   subtitle: string;
   style: "light" | "dark";
   isSubHeading?: boolean;
+  noLine?: boolean;
   type?: "h2" | "h3" | "h4" | "h5" | "default";
 } & (
   | {
@@ -22,6 +23,7 @@ export default function Header({
   subtitle,
   style = "dark",
   isSubHeading = false,
+  noLine = false,
   type = "h2",
   link,
   linkText,
@@ -36,7 +38,7 @@ export default function Header({
       <p
         className={`flex items-center gap-2 text-red uppercase font-semibold ${isSubHeading ? "tracking-[2px] text-[10px]" : "tracking-[4px] text-[11px]"}`}
       >
-        <span className="w-4 h-px bg-red" />
+        {!noLine && <span className="w-4 h-px bg-red" />}
         {subtitle}
       </p>
       {title && (
