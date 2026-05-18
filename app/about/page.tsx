@@ -11,10 +11,10 @@ export default function About() {
     <div>
       <div>
         <div
-          className="min-h-[calc(100vh-15rem)] px-18 relative bg-gradient-hero-small bg-black flex items-center"
+          className="px-18 py-40 relative bg-gradient-hero-small bg-black"
           id="hero"
         >
-          <div className="max-w-6xl mx-auto w-full min-h-72 flex flex-col justify-start">
+          <div className="max-w-6xl mx-auto w-full">
             <p className="text-red uppercase text-[10px] tracking-[4px] w-fit">
               Over Sakusei
             </p>
