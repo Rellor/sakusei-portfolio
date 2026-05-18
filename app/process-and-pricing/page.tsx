@@ -64,7 +64,7 @@ export default function ProcessAndPricing() {
         </div>
 
         <Section
-          className="text-white flex-col flex gap-8 items-center"
+          className="text-white flex-col flex gap-8"
           background="dark"
           fullWidth={false}
         >
@@ -79,7 +79,7 @@ export default function ProcessAndPricing() {
         </Section>
 
         <Section
-          className="text-white flex-col flex gap-8 items-center"
+          className="text-white flex-col flex gap-8"
           background="red"
           fullWidth={false}
         >

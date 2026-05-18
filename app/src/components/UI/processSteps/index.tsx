@@ -10,7 +10,7 @@ type ProcessStepsProps = {
 
 export default function ProcessSteps({ steps }: ProcessStepsProps) {
   return (
-    <div className="flex flex-col w-full max-w-3xl">
+    <div className="flex flex-col w-full max-w-6xl">
       {steps.map((item, index) => {
         return (
           <div key={index} className="flex gap-12">

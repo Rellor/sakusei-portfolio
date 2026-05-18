@@ -17,7 +17,7 @@ export default function Section({
 }: SectionProps) {
   return (
     <div
-      className={`${background === "light" ? "bg-cream" : background === "dark" ? "bg-black" : background === "red" ? "bg-red" : "bg-gray"} ${noPadding ? "" : "py-32"} ${parentClassName}`}
+      className={`${background === "light" ? "bg-cream" : background === "dark" ? "bg-black" : background === "red" ? "bg-red" : "bg-gray"} ${noPadding ? "" : "py-32"} ${parentClassName} lg:px-8 px-4`}
     >
       <div
         className={`${!fullWidth && "max-w-6xl mx-auto w-full"} ${className}`}
