@@ -9,10 +9,10 @@ export default function Cases() {
     <div>
       <div>
         <div
-          className="h-[calc(100vh-10rem)] px-18 relative bg-gradient-hero-small bg-black flex flex-col gap-8 justify-center"
+          className="min-h-[calc(100vh-15rem)] px-18 relative bg-gradient-hero-small bg-black flex items-center"
           id="hero"
         >
-          <div className="mx-auto w-fit">
+          <div className="max-w-6xl mx-auto w-full min-h-72 flex flex-col justify-start">
             <p className="text-red uppercase text-[10px] tracking-[4px] w-fit">
               Ons werk
             </p>

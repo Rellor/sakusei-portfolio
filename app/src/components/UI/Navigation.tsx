@@ -32,7 +32,11 @@ export default function Navigation() {
           <Button text="Cases" type="link" href="/cases" />
         </li>
         <li>
-          <Button text="Proces & prijzen" type="link" href="/prices" />
+          <Button
+            text="Proces & prijzen"
+            type="link"
+            href="/process-and-pricing"
+          />
         </li>
         <li>
           <Button text="Over ons" type="link" href="/about" />
