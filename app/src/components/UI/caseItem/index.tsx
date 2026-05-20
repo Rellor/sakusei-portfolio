@@ -41,7 +41,7 @@ export default function CaseItem({
     <Link
       href={`/cases/${slug}`}
       style={{
-        backgroundImage: `url(${src})`,
+        backgroundImage: src ? `url(/${src.replace(/^\//, "")})` : undefined,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

@@ -1,5 +1,5 @@
 type SectionProps = {
-  background: "light" | "dark" | "red" | "gray";
+  background: "light" | "dark" | "red" | "gray" | "gradient";
   fullWidth: boolean;
   noPadding?: boolean;
   children: React.ReactNode;
@@ -17,7 +17,7 @@ export default function Section({
 }: SectionProps) {
   return (
     <div
-      className={`${background === "light" ? "bg-cream" : background === "dark" ? "bg-black" : background === "red" ? "bg-red" : "bg-gray"} ${noPadding ? "" : "py-32"} ${parentClassName} lg:px-8 px-4`}
+      className={`${background === "light" ? "bg-cream" : background === "dark" ? "bg-black" : background === "red" ? "bg-red" : background === "gray" ? "bg-gray" : "bg-gradient-hero bg-black"} ${noPadding ? "" : "py-32"} ${parentClassName} lg:px-8 px-4`}
     >
       <div
         className={`${!fullWidth && "max-w-6xl mx-auto w-full"} ${className}`}

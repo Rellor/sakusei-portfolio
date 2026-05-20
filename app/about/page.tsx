@@ -18,7 +18,7 @@ export default function About() {
             <p className="text-red uppercase text-[10px] tracking-[4px] w-fit">
               Over Sakusei
             </p>
-            <h1 className="uppercase max-w-4xl text-white flex flex-col">
+            <h1 className="max-w-4xl text-white flex flex-col">
               Passie. Precisie.
               <span className="text-red"> Perfectie.</span>
             </h1>

@@ -16,7 +16,7 @@ export default function Cases() {
             <p className="text-red uppercase text-[10px] tracking-[4px] w-fit">
               Ons werk
             </p>
-            <h1 className="uppercase max-w-4xl text-white flex flex-col">
+            <h1 className="max-w-4xl text-white flex flex-col">
               Geselecteerde
               <span className="text-red"> Cases.</span>
             </h1>

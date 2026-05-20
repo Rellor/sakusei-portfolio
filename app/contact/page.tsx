@@ -50,16 +50,12 @@ export default function ProcessAndPricing() {
         >
           <div className="max-w-6xl mx-auto w-full">
             <p className="text-red uppercase text-[10px] tracking-[4px] w-fit">
-              Hoe we werken
+              Neem contact op
             </p>
 
             <h1 className="max-w-4xl text-white flex flex-col">
-              Proces &<span className="text-red"> Prijzen.</span>
+              Laten we<span className="text-red"> praten.</span>
             </h1>
-            <p className="text-white/55 max-w-xl">
-              Transparant, persoonlijk en altijd op maat. Wij geloven in heldere
-              communicatie en eerlijke prijzen voor uitzonderlijke kwaliteit.
-            </p>
           </div>
         </div>
 
@@ -68,32 +64,7 @@ export default function ProcessAndPricing() {
           background="dark"
           fullWidth={false}
         >
-          <Header
-            title="Van gesprek tot scherm."
-            subtitle="Ons werkproces"
-            style="light"
-            type="h2"
-            noLine={false}
-          />
-          <ProcessSteps steps={steps} />
-        </Section>
-
-        <Section
-          className="text-white flex-col flex gap-8"
-          background="red"
-          fullWidth={false}
-        >
-          <h2>Twijfelt u nog?</h2>
-          <p>
-            Een kennismakingsgesprek is altijd gratis en vrijblijvend. Wij
-            denken graag met u mee.
-          </p>
-          <Button
-            text="Gratis gesprek plannen"
-            type="button"
-            href="/contact"
-            color="light"
-          />
+          <p>hallo</p>
         </Section>
       </div>
     </div>

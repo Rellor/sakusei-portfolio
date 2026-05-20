@@ -5,6 +5,7 @@ import Header from "@/app/src/components/UI/header";
 import ItemGrid from "@/app/src/components/UI/itemGrid";
 import StepItem from "@/app/src/components/UI/stepItem";
 import Button from "@/app/src/components/UI/button";
+import Link from "next/link";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -35,11 +36,17 @@ export default async function CasePage({ params }: Props) {
   return (
     <div>
       <Section
-        background="dark"
+        background="gradient"
         fullWidth={false}
-        className="flex flex-col gap-10"
+        className="flex flex-col gap-2"
       >
-        <p className="text-red uppercase text-[10px] tracking-[4px]">
+        <Link
+          href="/cases"
+          className="text-white/55 hover:text-white transition-all duration-300 text-sm flex items-center gap-1 uppercase tracking-[2px] text-[12px] mb-40 w-fit p-2 pl-0"
+        >
+          <span className="pr-1">←</span> Terug naar cases
+        </Link>
+        <p className="text-red uppercase text-[11px] tracking-[4px]">
           {caseData.button.title}
         </p>
         <h1 className="text-white">{caseData.client.name}</h1>
