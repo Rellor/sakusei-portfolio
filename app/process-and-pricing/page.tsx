@@ -80,6 +80,26 @@ export default function ProcessAndPricing() {
 
         <Section
           className="text-white flex-col flex gap-8"
+          background="dark"
+          fullWidth={false}
+        >
+          <div className="flex flex-col gap-4">
+            <Header
+              title="Kies uw pakket."
+              subtitle="Transparante prijzen"
+              style="light"
+              type="h2"
+              noLine={false}
+            />
+            <p className="text-white/55 max-w-xl">
+              Alle pakketten inclusief concept, productie en post-productie.
+              Prijzen exclusief BTW. Maatwerk altijd mogelijk.
+            </p>
+          </div>
+        </Section>
+
+        <Section
+          className="text-white flex-col flex gap-8"
           background="red"
           fullWidth={false}
         >
