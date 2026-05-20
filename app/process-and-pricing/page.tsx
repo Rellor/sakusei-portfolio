@@ -1,11 +1,54 @@
 import Button from "../src/components/UI/button";
 import Section from "../src/components/UI/section";
-import ItemGrid from "../src/components/UI/itemGrid";
 import Header from "../src/components/UI/header";
-import StepItem from "../src/components/UI/stepItem";
 import ProcessSteps from "../src/components/UI/processSteps";
-import { Check, Handshake, Lightbulb, SwitchCamera } from "lucide-react";
-import Image from "next/image";
+import PriceItem from "../src/components/UI/priceItem";
+
+const pricingPlans = [
+  {
+    plan: "Starter",
+    price: "€ 950",
+    period: "Eénmalig, ex. BTW",
+    features: [
+      "1 filmdag (halve dag)",
+      "1 video tot 2 minuten",
+      "Professionele montage & grading",
+      "Muzieklicentie inbegrepen",
+      "2 revisierondes",
+      "Oplevering in 2 formaten",
+    ],
+  },
+  {
+    plan: "Studio",
+    price: "€ 2.250",
+    period: "Eénmalig, ex. BTW",
+    features: [
+      "1 volledige filmdag",
+      "3 video's (diverse formaten)",
+      "Concept & storyboard inbegrepen",
+      "Kleurcorrectie & grading",
+      "Motion graphics & tekstlagen",
+      "Muzieklicentie inbegrepen",
+      "3 revisierondes",
+      "Oplevering in 5 formaten",
+    ],
+    featured: true,
+    badge: "Meest gekozen",
+  },
+  {
+    plan: "Maandelijks pakket",
+    price: "€ 1.450",
+    period: "Per maand, ex. BTW",
+    features: [
+      "2 filmdagen per maand",
+      "8–12 social videos per maand",
+      "Content strategie inbegrepen",
+      "Prioriteit planning",
+      "Maandelijks content kalender",
+      "Dedicated contactpersoon",
+    ],
+  },
+];
 
 const steps = [
   {
@@ -95,6 +138,11 @@ export default function ProcessAndPricing() {
               Alle pakketten inclusief concept, productie en post-productie.
               Prijzen exclusief BTW. Maatwerk altijd mogelijk.
             </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            {pricingPlans.map((plan) => (
+              <PriceItem key={plan.plan} {...plan} />
+            ))}
           </div>
         </Section>
 

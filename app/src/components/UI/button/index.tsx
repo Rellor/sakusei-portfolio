@@ -8,7 +8,7 @@ interface ButtonProps {
   type?: "button" | "link" | "arrow";
   hasLine?: boolean;
   className?: string;
-  color?: "dark" | "light" | "red";
+  color?: "dark" | "light" | "red" | "border";
 }
 
 export default function Button({
@@ -24,7 +24,7 @@ export default function Button({
 
   // Base styles
   const buttonBase =
-    "px-6 py-2.5 text-[12px] tracking-[1px] font-bold uppercase transition-colors duration-300 flex w-fit";
+    "px-6 py-2.5 text-[11px] tracking-[1px] font-semibold uppercase transition-colors duration-300 flex w-fit";
 
   const linkBase =
     "text-[11px] font-bold uppercase transition-colors duration-300 tracking-[2.5px] py-2.5 group flex w-fit";
@@ -52,6 +52,13 @@ export default function Button({
       link: "text-red/55 hover:text-red",
       arrow: "bg-white hover:bg-white/70 text-red",
       line: "bg-red/55 group-hover:bg-red",
+    },
+
+    border: {
+      button: "border border-white/20 text-white hover:bg-red hover:border-red",
+      link: "text-white/55 hover:text-white",
+      arrow: "border border-white text-white hover:bg-white hover:text-white",
+      line: "bg-white/55 group-hover:bg-white",
     },
   };
 
