@@ -53,7 +53,7 @@ export default function Home() {
           className="h-screen xl:px-20 lg:px-12 px-4 relative bg-gradient-hero bg-black flex flex-col gap-8 justify-center"
           id="hero"
         >
-          <p className="text-red uppercase text-[10px] absolute top-1 left-18 tracking-[4px] flex gap-1 items-center">
+          <p className="text-red uppercase font-semibold text-[10px] absolute top-1 left-18 tracking-[2px] flex gap-1 items-center">
             Videoproductie & Marketing <span className="h-px bg-red w-4 mr-1" />{" "}
             Purmerend
           </p>

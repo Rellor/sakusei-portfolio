@@ -27,7 +27,7 @@ export default function Button({
     "px-6 py-2.5 text-[11px] tracking-[1px] font-semibold uppercase transition-colors duration-300 flex w-fit";
 
   const linkBase =
-    "text-[11px] font-bold uppercase transition-colors duration-300 tracking-[2.5px] py-2.5 group flex w-fit";
+    "text-[11px] font-semibold uppercase transition-colors duration-300 tracking-[2.5px] py-2.5 group flex w-fit";
 
   const arrowBase = "p-3 transition-colors duration-300 w-fit";
 

@@ -15,7 +15,7 @@ export default function About() {
           id="hero"
         >
           <div className="max-w-6xl mx-auto w-full">
-            <p className="text-red uppercase text-[10px] tracking-[4px] w-fit">
+            <p className="text-red uppercase font-semibold text-[10px] tracking-[2px] w-fit">
               Over Sakusei
             </p>
             <h1 className="max-w-4xl text-white flex flex-col">

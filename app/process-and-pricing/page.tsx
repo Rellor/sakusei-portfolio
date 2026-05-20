@@ -92,7 +92,7 @@ export default function ProcessAndPricing() {
           id="hero"
         >
           <div className="max-w-6xl mx-auto w-full">
-            <p className="text-red uppercase text-[10px] tracking-[4px] w-fit">
+            <p className="text-red uppercase font-semibold text-[11px] tracking-[2px] w-fit">
               Hoe we werken
             </p>
 
@@ -110,6 +110,7 @@ export default function ProcessAndPricing() {
           className="text-white flex-col flex gap-8"
           background="dark"
           fullWidth={false}
+          noTopPadding={true}
         >
           <Header
             title="Van gesprek tot scherm."
@@ -125,6 +126,7 @@ export default function ProcessAndPricing() {
           className="text-white flex-col flex gap-8"
           background="dark"
           fullWidth={false}
+          noTopPadding={true}
         >
           <div className="flex flex-col gap-4">
             <Header

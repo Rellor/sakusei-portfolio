@@ -46,7 +46,7 @@ export default async function CasePage({ params }: Props) {
         >
           <span className="pr-1">←</span> Terug naar cases
         </Link>
-        <p className="text-red uppercase text-[11px] tracking-[4px]">
+        <p className="text-red uppercase text-[11px] font-semibold tracking-[2px]">
           {caseData.button.title}
         </p>
         <h1 className="text-white">{caseData.client.name}</h1>
@@ -172,6 +172,7 @@ export default async function CasePage({ params }: Props) {
         fullWidth={false}
         noPadding={false}
         className="flex gap-8 justify-between"
+        noTopPadding={true}
       >
         <Header
           title="Wat we hebben gedaan."
@@ -200,6 +201,7 @@ export default async function CasePage({ params }: Props) {
         fullWidth={false}
         noPadding={false}
         className="flex flex-col gap-8 justify-between"
+        noTopPadding={true}
       >
         <Header
           title="Het effect."

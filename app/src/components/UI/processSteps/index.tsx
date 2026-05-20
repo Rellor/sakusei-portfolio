@@ -20,7 +20,7 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
             </div>
 
             <div className="pb-12">
-              <p className="text-red uppercase text-[10px] tracking-[4px] mb-1">
+              <p className="text-red uppercase font-semibold text-[11px] tracking-[2px] mb-1">
                 {item.step}
               </p>
               <h3 className="text-white mb-2">{item.title}</h3>

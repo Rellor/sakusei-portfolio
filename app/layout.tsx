@@ -7,6 +7,7 @@ import Cursor from "./src/components/UI/cursor";
 import Footer from "./src/components/UI/footer";
 
 const montserrat = Montserrat({
+  weight: ["400", "500", "600", "700"],
   variable: "--font-montserrat",
   subsets: ["latin"],
 });

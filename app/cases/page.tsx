@@ -13,7 +13,7 @@ export default function Cases() {
           id="hero"
         >
           <div className="max-w-6xl mx-auto w-full">
-            <p className="text-red uppercase text-[10px] tracking-[4px] w-fit">
+            <p className="text-red uppercase font-semibold text-[11px] tracking-[2px] w-fit">
               Ons werk
             </p>
             <h1 className="max-w-4xl text-white flex flex-col">
@@ -31,6 +31,7 @@ export default function Cases() {
           background="dark"
           fullWidth={false}
           className="flex flex-col gap-10"
+          noTopPadding={true}
         >
           <ItemGrid aspectRatio="long" cols={3}>
             {Object.values(detailedCases).map((c) => (

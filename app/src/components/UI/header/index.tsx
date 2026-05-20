@@ -36,7 +36,7 @@ export default function Header({
       className={`flex flex-col relative ${isSubHeading ? "gap-0" : "gap-4"}`}
     >
       <p
-        className={`flex items-center gap-2 text-red uppercase font-semibold ${isSubHeading ? "tracking-[2px] text-[10px]" : "tracking-[4px] text-[11px]"}`}
+        className={`flex items-center gap-2 text-red uppercase font-semibold ${isSubHeading ? "tracking-[2px] text-[10px]" : "tracking-[2px] text-[11px]"}`}
       >
         {!noLine && <span className="w-4 h-px bg-red" />}
         {subtitle}

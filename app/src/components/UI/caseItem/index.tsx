@@ -54,7 +54,7 @@ export default function CaseItem({
       <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <div className="relative text-white">
-        <p className="text-red uppercase font-semibold tracking-[4px] text-[10px]">
+        <p className="text-red uppercase font-semibold tracking-[2px] text-[10px]">
           {category}
         </p>
 
