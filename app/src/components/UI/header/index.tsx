@@ -51,7 +51,7 @@ export default function Header({
           type="link"
           href={link}
           hasLine={true}
-          className="absolute right-0 bottom-0"
+          className="md:absolute right-0 bottom-0"
         />
       )}
     </div>

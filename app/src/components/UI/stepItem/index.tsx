@@ -17,7 +17,7 @@ export default function StepItem({
 }: StepItemProps) {
   return (
     <div
-      className={`w-full ${style === "light" ? "bg-white hover:bg-black" : "bg-gray hover:bg-gray-light hover:border-l-2 hover:border-red"} transition-all duration-300 group p-10 flex flex-col gap-4`}
+      className={`w-full ${style === "light" ? "bg-white hover:bg-black" : "bg-gray hover:bg-gray-light hover:border-l-2 hover:border-red"} transition-all duration-300 group md:p-10 p-4 flex flex-col gap-4`}
     >
       <div className="flex gap-4 justify-between items-center">
         {icon && (

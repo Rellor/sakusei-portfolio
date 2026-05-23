@@ -28,7 +28,7 @@ export default function ItemGrid({
     ${className}
     ${aspectRatio === "video" ? "aspect-video" : ""}
     ${aspectRatio === "long" ? "aspect-long" : ""}
-    max-lg:grid-cols-1
+    max-md:grid-cols-1
   `;
 
   return <div className={combinedClassName}>{children}</div>;

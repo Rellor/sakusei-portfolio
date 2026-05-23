@@ -50,7 +50,7 @@ export default function Home() {
     <div>
       <div>
         <div
-          className="lg:h-screen h-[calc(100vh-5rem)] xl:px-20 lg:px-12 px-4 relative bg-gradient-hero bg-black flex flex-col gap-8 justify-center"
+          className="overflow-hidden w-screen lg:h-screen h-[calc(100vh-5rem)] xl:px-20 lg:px-12 px-4 relative bg-gradient-hero bg-black flex flex-col gap-8 justify-center"
           id="hero"
         >
           <p className="text-red uppercase font-semibold text-[10px] absolute top-2 lg:left-18 left-2 tracking-[2px] flex max-lg:flex-col gap-1 lg:items-center">
@@ -68,8 +68,13 @@ export default function Home() {
             cinematische videocontent die raakt, blijft hangen en vertrouwen
             opbouwt.
           </p>
-          <div className="flex max-sm:flex-col lg:gap-8 gap-2 lg:items-center">
-            <Button text="Plan een gesprek" type="button" href="/contact" />
+          <div className="flex max-sm:flex-col lg:gap-8 gap-2 md:items-center">
+            <Button
+              text="Plan een gesprek"
+              type="button"
+              href="/contact"
+              className="max-md:w-full max-md:justify-center"
+            />
             <Button
               text="Bekijk cases"
               type="link"
@@ -124,7 +129,12 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <Button text="Plan een gesprek" type="button" href="/contact" />
+          <Button
+            text="Plan een gesprek"
+            type="button"
+            href="/contact"
+            className="max-md:w-full max-md:justify-center"
+          />
         </Section>
 
         <Section
@@ -205,6 +215,7 @@ export default function Home() {
             type="button"
             href="/contact"
             color="light"
+            className="max-md:w-full max-md:justify-center"
           />
         </Section>
       </div>

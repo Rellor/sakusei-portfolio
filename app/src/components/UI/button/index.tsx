@@ -24,10 +24,10 @@ export default function Button({
 
   // Base styles
   const buttonBase =
-    "px-6 py-2.5 text-[11px] tracking-[1px] font-semibold uppercase transition-colors duration-300 flex w-fit";
+    "px-6 md:py-2.5 py-3.5 md:text-[11px] text-sm tracking-[1px] font-semibold uppercase transition-colors duration-300 flex w-fit";
 
   const linkBase =
-    "text-[11px] font-semibold uppercase transition-colors duration-300 tracking-[2.5px] py-2.5 group flex w-fit";
+    "text-[11px] font-semibold uppercase transition-colors duration-300 tracking-[2.5px] py-2.5 group flex w-fit max-md:underline max-md:underline-offset-3";
 
   const arrowBase = "p-3 transition-colors duration-300 w-fit";
 

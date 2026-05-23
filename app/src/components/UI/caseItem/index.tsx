@@ -23,14 +23,14 @@ export default function CaseItem({
   aspectRatio = "video",
 }: caseItemProps) {
   const rowSpanClasses: Record<number, string> = {
-    1: "row-span-1",
-    2: "row-span-2",
-    3: "row-span-3",
+    1: "md:row-span-1",
+    2: "md:row-span-2",
+    3: "md:row-span-3",
   };
 
   const usedStyle =
     rowSpan && rowSpan > 1
-      ? `aspect-auto ${rowSpanClasses[rowSpan]}`
+      ? `md:aspect-auto max-sm:row-span-1 ${rowSpanClasses[rowSpan]}`
       : aspectRatio === "video"
         ? "aspect-[560/400]"
         : "aspect-3/4";
@@ -45,10 +45,10 @@ export default function CaseItem({
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className={`${usedStyle} aspectStyle relative flex items-end p-10 group overflow-hidden`}
+      className={`${usedStyle} aspectStyle relative flex items-end md:p-10 p-4 group overflow-hidden`}
     >
       {/* Default gradient */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/50 to-transparent transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/85 md:via-black/50 via-black/75 to-transparent transition-opacity duration-300" />
 
       {/* Hover gradient */}
       <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
