@@ -53,7 +53,7 @@ export default function Home() {
           className="overflow-hidden w-screen lg:h-screen h-[calc(100vh-5rem)] xl:px-20 lg:px-12 px-4 relative bg-gradient-hero bg-black flex flex-col gap-8 justify-center"
           id="hero"
         >
-          <p className="text-red uppercase font-semibold text-[10px] absolute top-2 lg:left-18 left-2 tracking-[2px] flex max-lg:flex-col gap-1 lg:items-center">
+          <p className="max-md:hidden text-red uppercase font-semibold text-[10px] absolute top-2 lg:left-18 left-2 tracking-[2px] flex max-lg:flex-col gap-1 lg:items-center">
             Videoproductie & Marketing
             <span className="flex items-center gap-1">
               <span className="h-px bg-red w-4 mr-1" /> Purmerend

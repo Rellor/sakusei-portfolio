@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Button from "./button";
+import Button from "../button";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);

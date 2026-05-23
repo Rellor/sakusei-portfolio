@@ -1,4 +1,3 @@
-// --- BUTTON INFO ---
 export const techflowCase = {
   button: {
     slug: "techflow-bv",

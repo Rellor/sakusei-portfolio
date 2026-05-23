@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat, Unica_One } from "next/font/google";
 import "./src/styles/theme.css";
 import "./src/styles/globals.css";
-import Navigation from "./src/components/UI/Navigation";
+import Navigation from "./src/components/UI/navigation/Navigation";
+import MobileNavigation from "./src/components/UI/navigation/mobileNavigation";
 import Cursor from "./src/components/UI/cursor";
 import Footer from "./src/components/UI/footer";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className="min-h-full max-w-screen overflow-x-hidden flex flex-col bg-cream">
         <header>
           <Navigation />
+          <MobileNavigation />
         </header>
         <main>
           <div>
