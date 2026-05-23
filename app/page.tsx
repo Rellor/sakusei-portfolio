@@ -50,12 +50,14 @@ export default function Home() {
     <div>
       <div>
         <div
-          className="h-screen xl:px-20 lg:px-12 px-4 relative bg-gradient-hero bg-black flex flex-col gap-8 justify-center"
+          className="lg:h-screen h-[calc(100vh-5rem)] xl:px-20 lg:px-12 px-4 relative bg-gradient-hero bg-black flex flex-col gap-8 justify-center"
           id="hero"
         >
-          <p className="text-red uppercase font-semibold text-[10px] absolute top-1 left-18 tracking-[2px] flex gap-1 items-center">
-            Videoproductie & Marketing <span className="h-px bg-red w-4 mr-1" />{" "}
-            Purmerend
+          <p className="text-red uppercase font-semibold text-[10px] absolute top-2 lg:left-18 left-2 tracking-[2px] flex max-lg:flex-col gap-1 lg:items-center">
+            Videoproductie & Marketing
+            <span className="flex items-center gap-1">
+              <span className="h-px bg-red w-4 mr-1" /> Purmerend
+            </span>
           </p>
           <h1 className="uppercase max-w-4xl text-white">
             Wanneer passie strategie ontmoet valt{" "}
@@ -66,7 +68,7 @@ export default function Home() {
             cinematische videocontent die raakt, blijft hangen en vertrouwen
             opbouwt.
           </p>
-          <div className="flex gap-8 items-center">
+          <div className="flex max-sm:flex-col lg:gap-8 gap-2 lg:items-center">
             <Button text="Plan een gesprek" type="button" href="/contact" />
             <Button
               text="Bekijk cases"
@@ -95,7 +97,7 @@ export default function Home() {
             subtitle="Over Sakusei"
             style="dark"
           />
-          <div className="flex gap-12 justify-between">
+          <div className="flex max-lg:flex-col gap-12 justify-between">
             <div className="flex flex-col gap-6 max-w-lg">
               <p>
                 Wij zijn Sakusei Studio — een videoproductiebedrijf gebaseerd in
@@ -110,7 +112,7 @@ export default function Home() {
                 topresultaat.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-10 w-fit">
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-10 w-fit">
               {overItems.map((item, index) => (
                 <div
                   key={index}

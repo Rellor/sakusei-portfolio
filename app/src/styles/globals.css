@@ -6,12 +6,12 @@ body {
 }
 
 h1 {
-  @apply text-[110px] font-bold leading-[0.95] -ml-2;
+  @apply lg:text-[110px] text-6xl font-bold leading-[0.95] -ml-2;
   font-family: var(--font-unica), sans-serif;
 }
 
 h2 {
-  @apply text-[80px] font-bold leading-none -ml-1;
+  @apply lg:text-[80px] text-5xl font-bold leading-none -ml-1;
   font-family: var(--font-unica), sans-serif;
 }
 

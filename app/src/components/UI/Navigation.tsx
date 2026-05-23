@@ -20,7 +20,7 @@ export default function Navigation() {
     <nav
       className={`${
         isScrolled ? "backdrop-blur-sm bg-black/90" : "pt-10 bg-black/05"
-      } fixed top-0 left-0 right-0 z-50  transition-padding duration-300 px-18 py-5 flex items-center justify-between`}
+      } fixed top-0 left-0 right-0 z-50  transition-padding duration-300 px-18 py-5 flex items-center justify-between max-lg:hidden`}
     >
       <Image src="/fullLogoLight.svg" alt="Logo" width={150} height={150} />
 
