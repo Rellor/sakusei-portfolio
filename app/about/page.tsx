@@ -11,7 +11,7 @@ export default function About() {
     <div>
       <div>
         <div
-          className="px-18 py-40 relative bg-gradient-hero-small bg-black"
+          className="md:px-18 px-4 md:py-40 py-28 pt-40 relative bg-gradient-hero-small bg-black"
           id="hero"
         >
           <div className="max-w-6xl mx-auto w-full">
@@ -72,9 +72,9 @@ export default function About() {
         <Section
           background="dark"
           fullWidth={false}
-          className="flex flex-col gap-24"
+          className="flex flex-col md:gap-24 gap-8"
         >
-          <div className="flex gap-10">
+          <div className="flex max-md:flex-col gap-4">
             <Header
               title="De Enso achter Sakusei"
               subtitle="Japanse filosofie"
@@ -98,7 +98,7 @@ export default function About() {
             </div>
           </div>
           <ItemGrid cols={2}>
-            <div className="bg-gray flex flex-col p-16 items-center">
+            <div className="bg-gray flex flex-col md:p-16 p-8 items-center">
               <Image
                 src="/cameraLens.svg"
                 alt="camera lens"
@@ -107,7 +107,7 @@ export default function About() {
                 className="pb-4"
               />
               <h4 className="text-white">Cameralens</h4>
-              <ul className="flex gap-1 text-white/55">
+              <ul className="flex gap-1 text-white/65">
                 <li>Video</li>
                 <li className="mx-1">&bull;</li>
                 <li>Vakmanschap</li>
@@ -115,7 +115,7 @@ export default function About() {
                 <li>Passie</li>
               </ul>
             </div>
-            <div className="bg-red flex flex-col p-16 items-center">
+            <div className="bg-red flex flex-col md:p-16 p-8 items-center">
               <Image
                 src="/ensoIcon.svg"
                 alt="enso"
@@ -124,7 +124,7 @@ export default function About() {
                 className="pb-4"
               />
               <h4 className="text-white">Enso (円相)</h4>
-              <ul className="flex gap-1 text-white/55">
+              <ul className="flex gap-1 text-white/65">
                 <li>Perfectie</li>
                 <li className="mx-1">&bull;</li>
                 <li>Oneindigheid</li>
@@ -135,7 +135,7 @@ export default function About() {
           </ItemGrid>
         </Section>
         <Section
-          className="text-white flex-col flex gap-8 items-center"
+          className="text-white flex-col flex gap-8 md:items-center"
           background="red"
           fullWidth={false}
         >
@@ -149,6 +149,7 @@ export default function About() {
             type="button"
             href="/contact"
             color="light"
+            className="max-md:w-full max-md:justify-center"
           />
         </Section>
       </div>

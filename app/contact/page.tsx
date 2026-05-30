@@ -45,7 +45,7 @@ export default function ProcessAndPricing() {
     <div>
       <div>
         <div
-          className="px-18 py-40 relative bg-gradient-hero-small bg-black"
+          className="md:px-18 px-4 md:py-40 py-28 pt-40 relative bg-gradient-hero-small bg-black"
           id="hero"
         >
           <div className="max-w-6xl mx-auto w-full">

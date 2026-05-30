@@ -20,7 +20,7 @@ export default function PriceItem({
 }: PriceItemProps) {
   return (
     <div
-      className={`relative h-full flex flex-col gap-8 p-10 transition-all duration-300 text-white ${
+      className={`relative h-full flex flex-col gap-8 md:p-10 px-16 py-10 transition-all duration-300 text-white ${
         featured ? "bg-red border-red" : "bg-gray border-gray-light"
       }`}
     >

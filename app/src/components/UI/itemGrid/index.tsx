@@ -22,12 +22,12 @@ export default function ItemGrid({
 }: ItemGridProps) {
   const combinedClassName = `
     grid
-    gap-1
+    md:gap-1 gap-4
     auto-rows-fr
     ${gridColsMap[cols]}
     ${className}
     ${aspectRatio === "video" ? "aspect-video" : ""}
-    ${aspectRatio === "long" ? "aspect-long" : ""}
+    ${aspectRatio === "long" ? "md:aspect-long aspect-video" : ""}
     max-md:grid-cols-1
   `;
 

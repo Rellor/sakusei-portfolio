@@ -9,7 +9,7 @@ export default function Cases() {
     <div>
       <div>
         <div
-          className="px-18 py-40 relative bg-gradient-hero-small bg-black"
+          className="md:px-18 px-4 md:py-40 py-28 pt-40 relative bg-gradient-hero-small bg-black"
           id="hero"
         >
           <div className="max-w-6xl mx-auto w-full">
@@ -47,7 +47,7 @@ export default function Cases() {
           </ItemGrid>
         </Section>
         <Section
-          className="text-white flex-col flex gap-8 items-center"
+          className="text-white flex-col flex gap-8 md:items-center"
           background="red"
           fullWidth={false}
         >
@@ -58,6 +58,7 @@ export default function Cases() {
             type="button"
             href="/contact"
             color="light"
+            className="max-md:w-full max-md:justify-center"
           />
         </Section>
       </div>
