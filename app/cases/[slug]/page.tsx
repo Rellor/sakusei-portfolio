@@ -56,28 +56,28 @@ export default async function CasePage({ params }: Props) {
         background="gray"
         fullWidth={false}
         noPadding={true}
-        parentClassName="border-y border-white/10"
+        parentClassName="border-y border-white/10 max-md:px-0!"
         className="text-white grid grid-cols-2 md:grid-cols-4"
       >
-        <div className="py-10 pr-10">
+        <div className="md:py-10 md:pr-10 max-md:p-6">
           <p className="tracking-[2.5px] text-white/25 text text-[12px]">
             Type
           </p>
           <h5>{caseData.project.type}</h5>
         </div>
-        <div className="border-l border-white/10 p-10">
+        <div className="border-l border-white/10 p-10 max-md:p-6">
           <p className="tracking-[2.5px] text-white/25 text text-[12px]">
             Year
           </p>
           <h5>{caseData.project.year}</h5>
         </div>
-        <div className="border-l max-md:border-l-0 max-md:border-t border-white/10 p-10">
+        <div className="border-l max-md:border-l-0 max-md:border-t border-white/10 p-10 max-md:p-6">
           <p className="tracking-[2.5px] text-white/25 text text-[12px]">
             Duration
           </p>
           <h5>{caseData.project.duration}</h5>
         </div>
-        <div className="border-l max-md:border-t border-white/10 p-10 md:pl-10">
+        <div className="border-l max-md:border-t border-white/10 p-10 md:pl-10 max-md:p-6">
           <p className="tracking-[2.5px] text-white/25 text text-[12px]">
             Platforms
           </p>
@@ -255,7 +255,7 @@ export default async function CasePage({ params }: Props) {
           title={nextCase.client.name}
           subtitle="Volgende case"
           style="dark"
-          type="h3"
+          type="h2"
           isSubHeading={true}
           noLine={true}
         />
