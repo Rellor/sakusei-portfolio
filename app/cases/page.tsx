@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Button from "../src/components/UI/button";
 import Section from "../src/components/UI/section";
 import ItemGrid from "../src/components/UI/itemGrid";
 import CaseItem from "../src/components/UI/caseItem";
 import { detailedCases } from "../../data/cases";
+
+export const metadata: Metadata = {
+  title: "Cases",
+  description:
+    "Bekijk geselecteerde videoproductie-cases van Sakusei Studio. Van brand films tot social content — elk project is een verhaal.",
+};
 
 export default function Cases() {
   return (

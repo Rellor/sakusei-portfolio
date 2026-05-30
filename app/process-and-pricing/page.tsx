@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Button from "../src/components/UI/button";
 import Section from "../src/components/UI/section";
 import Header from "../src/components/UI/header";
@@ -82,6 +83,12 @@ const steps = [
       "U ontvangt de video's in alle benodigde formaten — klaar voor YouTube, Instagram, LinkedIn of uw website. Op aanvraag adviseren wij ook over distributiestrategie en advertentie-inzet.",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Proces & Prijzen",
+  description:
+    "Transparante prijzen en een helder werkproces. Ontdek onze pakketten en hoe wij van concept tot scherm werken.",
+};
 
 export default function ProcessAndPricing() {
   return (

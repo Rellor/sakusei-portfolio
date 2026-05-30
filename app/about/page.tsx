@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Button from "../src/components/UI/button";
 import Section from "../src/components/UI/section";
 import ItemGrid from "../src/components/UI/itemGrid";
@@ -5,6 +6,12 @@ import Header from "../src/components/UI/header";
 import StepItem from "../src/components/UI/stepItem";
 import { Check, Handshake, Lightbulb, SwitchCamera } from "lucide-react";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Over Ons",
+  description:
+    "Leer Sakusei Studio kennen. Wij combineren Japanse filosofie met cinematisch vakmanschap om merken te laten opvallen.",
+};
 
 export default function About() {
   return (

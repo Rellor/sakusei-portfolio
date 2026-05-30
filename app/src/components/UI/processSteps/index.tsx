@@ -13,7 +13,7 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
     <div className="flex flex-col w-full max-w-6xl">
       {steps.map((item, index) => {
         return (
-          <div key={index} className={`flex md:gap-12 gap-4 max-md:pr-2 `}>
+          <div key={index} className="flex md:gap-12 gap-4 max-md:pr-2">
             <div className="flex flex-col items-center">
               <div className="w-3 h-3 rounded-full bg-red shrink-0" />
               <div className="w-px flex-1 bg-red" />

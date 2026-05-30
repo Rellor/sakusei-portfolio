@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Button from "./src/components/UI/button";
 import Image from "next/image";
 import WordSlider from "./src/components/UI/wordSlider";
@@ -8,6 +9,12 @@ import CaseItem from "./src/components/UI/caseItem";
 import StepItem from "./src/components/UI/stepItem";
 import { Check, Handshake, Lightbulb, SwitchCamera } from "lucide-react";
 import { detailedCases } from "../data/cases";
+
+export const metadata: Metadata = {
+  title: "Home | Sakusei Studio",
+  description:
+    "Sakusei Studio — cinematische videoproductie en marketingstrategie voor merken die willen opvallen. Gebaseerd in Purmerend.",
+};
 
 const carouselWords: string[] = [
   "Videoproductie",
@@ -147,7 +154,7 @@ export default function Home() {
             subtitle="Ons werk"
             style="light"
             linkText="Alle cases"
-            link="/"
+            link="/cases"
           />
           <ItemGrid cols={2}>
             {Object.values(detailedCases).map((c) => (
