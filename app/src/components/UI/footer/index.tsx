@@ -34,8 +34,15 @@ type FooterProps = {
 
 export default function Footer({ className }: FooterProps) {
   return (
-    <footer className={`bg-black ${className ?? ""}`}>
-      <div className="max-w-6xl mx-auto px-4 pt-16 pb-0">
+    <footer className={`bg-black border-t border-white/10 ${className ?? ""}`}>
+      <div className="max-w-6xl mx-auto px-4 pt-16 pb-0 relative">
+        <a
+          href="#"
+          aria-label="Terug naar boven"
+          className="absolute right-4 top-4 md:right-6 md:top-6 w-9 h-9 md:w-10 md:h-10 border border-white/10 text-white/55 hover:text-white hover:border-white/30 transition-colors duration-300 flex items-center justify-center"
+        >
+          ↑
+        </a>
         {/* Top section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12">
           {/* Brand */}
