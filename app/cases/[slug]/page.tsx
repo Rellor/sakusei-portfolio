@@ -42,7 +42,7 @@ export default async function CasePage({ params }: Props) {
       >
         <Link
           href="/cases"
-          className="text-white/55 hover:text-white transition-all duration-300 text-sm flex items-center gap-1 uppercase tracking-[2px] text-[12px] mb-40 w-fit p-2 pl-0"
+          className="text-white/55 hover:text-white transition-all duration-300 text-sm flex items-center gap-1 uppercase tracking-[2px] text-[12px] md:mb-40 mb-12 w-fit p-2 pl-0"
         >
           <span className="pr-1">←</span> Terug naar cases
         </Link>
@@ -57,7 +57,7 @@ export default async function CasePage({ params }: Props) {
         fullWidth={false}
         noPadding={true}
         parentClassName="border-y border-white/10"
-        className="text-white grid grid-cols-4"
+        className="text-white grid grid-cols-2 md:grid-cols-4"
       >
         <div className="py-10 pr-10">
           <p className="tracking-[2.5px] text-white/25 text text-[12px]">
@@ -71,13 +71,13 @@ export default async function CasePage({ params }: Props) {
           </p>
           <h5>{caseData.project.year}</h5>
         </div>
-        <div className="border-l border-white/10 p-10">
+        <div className="border-l max-md:border-l-0 max-md:border-t border-white/10 p-10">
           <p className="tracking-[2.5px] text-white/25 text text-[12px]">
             Duration
           </p>
           <h5>{caseData.project.duration}</h5>
         </div>
-        <div className="border-l border-white/10 py-10 pl-10">
+        <div className="border-l max-md:border-t border-white/10 p-10 md:pl-10">
           <p className="tracking-[2.5px] text-white/25 text text-[12px]">
             Platforms
           </p>
@@ -88,7 +88,7 @@ export default async function CasePage({ params }: Props) {
         background="dark"
         fullWidth={false}
         noPadding={false}
-        className="flex gap-8 justify-between"
+        className="flex gap-8 justify-between max-md:flex-col"
       >
         <Header
           title="Wat de klant wilde."
@@ -171,7 +171,7 @@ export default async function CasePage({ params }: Props) {
         background="dark"
         fullWidth={false}
         noPadding={false}
-        className="flex gap-8 justify-between"
+        className="flex gap-8 justify-between max-md:flex-col"
         noTopPadding={true}
       >
         <Header
