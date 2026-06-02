@@ -6,6 +6,7 @@ import ItemGrid from "@/app/src/components/UI/itemGrid";
 import StepItem from "@/app/src/components/UI/stepItem";
 import Button from "@/app/src/components/UI/button";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -160,19 +161,53 @@ export default async function CasePage({ params }: Props) {
           </p>
           <div className="space-y-1 w-full">
             <div className="grid grid-cols-3 grid-rows-2 gap-1">
-              <div className="bg-gray col-span-2 row-span-2 w-full h-full" />
+              <Image
+                src={photos?.main || "cases/placeholder-main.jpg"}
+                alt="Main photo"
+                width={800}
+                height={600}
+                className="bg-gray col-span-2 row-span-2 w-full h-full object-cover"
+              />
 
-              <div className="bg-gray aspect-square w-full" />
+              <Image
+                src={photos?.subs?.[0] || "cases/placeholder-sub1.jpg"}
+                alt="Sub photo 1"
+                width={400}
+                height={400}
+                className="bg-gray aspect-square w-full object-cover"
+              />
 
-              <div className="bg-gray aspect-square w-full" />
+              <Image
+                src={photos?.subs?.[1] || "cases/placeholder-sub2.jpg"}
+                alt="Sub photo 2"
+                width={400}
+                height={400}
+                className="bg-gray aspect-square w-full object-cover"
+              />
             </div>
 
             <div className="grid grid-cols-3 gap-1">
-              <div className="bg-gray aspect-4/3 w-full" />
-
-              <div className="bg-gray aspect-4/3 w-full" />
-
-              <div className="bg-gray aspect-4/3 w-full" />
+              <Image
+                src={photos?.bottom?.[0] || "cases/placeholder-bottom1.jpg"}
+                alt="Bottom photo 1"
+                width={400}
+                height={300}
+                className="bg-gray aspect-4/3 w-full object-cover"
+              />
+              <Image
+                src={photos?.bottom?.[1] || "cases/placeholder-bottom2.jpg"}
+                alt="Bottom photo 2"
+                width={400}
+                height={300}
+                className="bg-gray aspect-4/3 w-full object-cover"
+              />
+              <Image
+                src={photos?.bottom?.[2] || "cases/placeholder-bottom3.jpg"}
+                alt="Bottom photo 3"
+                width={400}
+                height={300}
+                className="bg-gray aspect-4/3 w-full object-cover"
+              />
             </div>
           </div>
         </Section>
