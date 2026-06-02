@@ -13,17 +13,10 @@ import { detailedCases } from "../data/cases";
 export const metadata: Metadata = {
   title: "Home | Sakusei Studio",
   description:
-    "Sakusei Studio — cinematische videoproductie en marketingstrategie voor merken die willen opvallen. Gebaseerd in Purmerend.",
+    "Sakusei vertaalt de identiteit en het verhaal van uw bedrijf naar cinematische videocontent die raakt, blijft hangen en vertrouwen opbouwt.",
 };
 
 const carouselWords: string[] = [
-  "Videoproductie",
-  "Brand Films",
-  "Marketing Strategie",
-  "Cinematisch",
-  "Storytelling",
-  "Social Content",
-  "Vakmanschap",
   "Videoproductie",
   "Brand Films",
   "Marketing Strategie",
@@ -60,15 +53,9 @@ export default function Home() {
           className="overflow-hidden w-screen lg:h-screen h-[calc(100vh-5rem)] xl:px-20 lg:px-12 px-4 relative bg-gradient-hero bg-black flex flex-col gap-8 justify-center"
           id="hero"
         >
-          <p className="max-md:hidden text-red uppercase font-semibold text-[10px] absolute top-2 lg:left-18 left-2 tracking-[2px] flex max-lg:flex-col gap-1 lg:items-center">
-            Videoproductie & Marketing
-            <span className="flex items-center gap-1">
-              <span className="h-px bg-red w-4 mr-1" /> Purmerend
-            </span>
-          </p>
-          <h1 className="uppercase max-w-4xl text-white">
+          <h1 className="max-w-4xl text-white">
             Wanneer passie strategie ontmoet valt{" "}
-            <span className="text-red">alles</span> op zijn plek.
+            <span className="text-red">niemand </span>meer onopgemerkt.
           </h1>
           <p className="text-white/55 max-w-xl">
             Sakusei vertaalt de identiteit en het verhaal van uw bedrijf naar
@@ -112,11 +99,9 @@ export default function Home() {
           <div className="flex max-lg:flex-col gap-12 justify-between">
             <div className="flex flex-col gap-6 max-w-lg">
               <p>
-                Wij zijn Sakusei Studio — een videoproductiebedrijf gebaseerd in
-                Purmerend, gedreven door een{" "}
-                <b>Japanse filosofie van perfectie.</b> Wabi-sabi, vakmanschap
-                en het streven naar de pure creatieve energie van het
-                hier-en-nu.
+                Wij zijn Sakusei, een videoproductiebedrijf gebaseerd in
+                Purmerend, <b>gedreven</b> door vakmanschapen het streven naar
+                de pure creatieve energie van het hier-en-nu.
               </p>
               <p>
                 Van concept tot montage regelen wij alles. U hoeft zich geen
@@ -137,9 +122,9 @@ export default function Home() {
             </div>
           </div>
           <Button
-            text="Plan een gesprek"
+            text="Leer ons kennen"
             type="button"
-            href="/contact"
+            href="/about"
             className="max-md:w-full max-md:justify-center"
           />
         </Section>
@@ -185,7 +170,7 @@ export default function Home() {
               icon={<Handshake className="stroke-white" />}
               amount={1}
               title="Kennismaking"
-              description="We leren uw merk, doelen en doelgroep kennen."
+              description="We leren uw merk, doelen en doelgroep kennen. Geen standaard aanpak — elk project begint uniek."
             />
             <StepItem
               icon={<Lightbulb className="stroke-white" />}
@@ -206,6 +191,13 @@ export default function Home() {
               description="Professionele montage, grading en muziek. Klaar voor publicatie op alle platforms die voor u relevant zijn."
             />
           </ItemGrid>
+          <Button
+            text="Bekijk volledig proces & prijzen"
+            type="button"
+            href="/process-and-pricing"
+            color="dark"
+            className="max-md:w-full max-md:justify-center"
+          />
         </Section>
         <Section
           className="text-white flex-col flex gap-8 items-center"
