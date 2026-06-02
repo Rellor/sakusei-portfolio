@@ -182,7 +182,7 @@ export default async function CasePage({ params }: Props) {
         <Section
           background="dark"
           fullWidth={false}
-          noPadding={true}
+          noPadding={!hasPhotos}
           className="flex flex-col gap-8 justify-between"
         >
           <Header
