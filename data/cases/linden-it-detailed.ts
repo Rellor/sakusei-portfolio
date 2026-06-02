@@ -7,7 +7,6 @@ export const lindenItCase = {
   },
   client: {
     name: "Linden-IT",
-    location: "Nederland",
   },
   project: {
     type: "Brandmovie",
@@ -37,32 +36,6 @@ export const lindenItCase = {
   whatWeDid: {
     title: "Onze aanpak",
     description:
-      "In de film lag de focus op het zichtbaar maken van zowel de technische expertise als de unieke bedrijfscultuur. Door medewerkers een prominente rol te geven, creeerden we een persoonlijk en geloofwaardig verhaal dat laat zien wie het bedrijf is, waar het voor staat en wat werken binnen de organisatie bijzonder maakt. We combineerden inspirerende interviews, dynamische werksituaties en sfeerbeelden van de werkvloer om een compleet beeld te schetsen van de dagelijkse praktijk.",
-  },
-  effect: [
-    {
-      title: "Resultaten",
-      data: "Nog niet van toepassing",
-    },
-    {
-      title: "Status",
-      data: "Video nog niet online",
-    },
-    {
-      title: "Publicatie",
-      data: "Volgt",
-    },
-  ],
-  photos: {
-    main: "cases/linden-it/main.jpg",
-    subs: ["cases/linden-it/sub1.jpg", "cases/linden-it/sub2.jpg"],
-    bottom: [
-      "cases/linden-it/bottom1.jpg",
-      "cases/linden-it/bottom2.jpg",
-      "cases/linden-it/bottom3.jpg",
-    ],
-  },
-  video: {
-    url: "https://www.youtube.com/embed/GYk14hnua8k?si=7oOeR-iLozebvfoi",
+      "In de film lag de focus op het zichtbaar maken van zowel de technische expertise als de unieke bedrijfscultuur. Door medewerkers een prominente rol te geven, creerden we een persoonlijk en geloofwaardig verhaal dat laat zien wie het bedrijf is, waar het voor staat en wat werken binnen de organisatie bijzonder maakt. We combineerden inspirerende interviews, dynamische werksituaties en sfeerbeelden van de werkvloer om een compleet beeld te schetsen van de dagelijkse praktijk.",
   },
 };

@@ -33,6 +33,52 @@ export default async function CasePage({ params }: Props) {
   const nextIdx = (currentIdx + 1) % casesArr.length;
   const nextCase = casesArr[nextIdx];
 
+  const hasValue = (value: unknown) => {
+    if (value === null || value === undefined) return false;
+    if (typeof value === "string") return value.trim().length > 0;
+    if (Array.isArray(value)) return value.length > 0;
+    return true;
+  };
+
+  const briefDescription = caseData.brief?.description ?? "";
+  const whatWeDidDescription = caseData.whatWeDid?.description ?? "";
+
+  const projectItems = [
+    { label: "Type", value: caseData.project?.type },
+    { label: "Year", value: caseData.project?.year },
+    { label: "Duration", value: caseData.project?.duration },
+    {
+      label: "Platforms",
+      value: caseData.project?.platforms?.length
+        ? caseData.project.platforms.join(", ")
+        : undefined,
+    },
+  ].filter((item) => hasValue(item.value));
+
+  const processItems = (
+    "process" in caseData && Array.isArray(caseData.process)
+      ? caseData.process
+      : []
+  ).filter((step) => hasValue(step.title) || hasValue(step.description));
+
+  const effectItems = (
+    "effect" in caseData && Array.isArray(caseData.effect)
+      ? caseData.effect
+      : []
+  ).filter((item) => hasValue(item.title) || hasValue(item.data));
+
+  const hasBrief = hasValue(briefDescription);
+  const hasWhatWeDid = hasValue(whatWeDidDescription);
+  const hasProcess = processItems.length > 0;
+  const hasEffect = effectItems.length > 0;
+  const videoUrl = "video" in caseData ? caseData.video?.url : undefined;
+  const hasVideo = hasValue(videoUrl);
+  const photos = "photos" in caseData ? caseData.photos : undefined;
+  const hasPhotos =
+    hasValue(photos?.main) ||
+    hasValue(photos?.subs) ||
+    hasValue(photos?.bottom);
+
   return (
     <div>
       <Section
@@ -50,200 +96,197 @@ export default async function CasePage({ params }: Props) {
           {caseData.button.title}
         </p>
         <h1 className="text-white">{caseData.client.name}</h1>
-        <p className="text-white/55">{caseData.brief.description}</p>
+        {hasBrief && <p className="text-white/55">{briefDescription}</p>}
       </Section>
-      <Section
-        background="gray"
-        fullWidth={false}
-        noPadding={true}
-        parentClassName="border-y border-white/10 max-md:px-0!"
-        className="text-white grid grid-cols-2 md:grid-cols-4"
-      >
-        <div className="md:py-10 md:pr-10 max-md:p-6">
-          <p className="tracking-[2.5px] text-white/25 text text-[12px]">
-            Type
-          </p>
-          <h5>{caseData.project.type}</h5>
-        </div>
-        <div className="border-l border-white/10 p-10 max-md:p-6">
-          <p className="tracking-[2.5px] text-white/25 text text-[12px]">
-            Year
-          </p>
-          <h5>{caseData.project.year}</h5>
-        </div>
-        <div className="border-l max-md:border-l-0 max-md:border-t border-white/10 p-10 max-md:p-6">
-          <p className="tracking-[2.5px] text-white/25 text text-[12px]">
-            Duration
-          </p>
-          <h5>{caseData.project.duration}</h5>
-        </div>
-        <div className="border-l max-md:border-t border-white/10 p-10 md:pl-10 max-md:p-6">
-          <p className="tracking-[2.5px] text-white/25 text text-[12px]">
-            Platforms
-          </p>
-          <h5>{caseData.project.platforms.join(", ")}</h5>
-        </div>
-      </Section>
-      <Section
-        background="dark"
-        fullWidth={false}
-        noPadding={false}
-        className="flex gap-8 justify-between max-md:flex-col"
-      >
-        <Header
-          title="Wat de klant wilde."
-          subtitle="De opdracht"
-          style="light"
-          type="h3"
-          isSubHeading={true}
-        />
-
-        {caseData.brief.description.includes("##") ? (
-          <div className="flex flex-col gap-2 max-w-2xl">
-            {caseData.brief.description.split("##").map((part, idx) => (
-              <p className="text-white/55" key={idx}>
-                {part.trim()}
+      {projectItems.length > 0 && (
+        <Section
+          background="gray"
+          fullWidth={false}
+          noPadding={true}
+          parentClassName="border-y border-white/10 max-md:px-0!"
+          className="text-white grid grid-cols-2 md:grid-cols-4"
+        >
+          {projectItems.map((item, index) => (
+            <div
+              key={item.label}
+              className={`${index > 0 ? "border-l" : ""} ${index >= 2 ? "max-md:border-t max-md:border-l-0" : ""} border-white/10 p-10 max-md:p-6 ${index === 0 ? "md:py-10 md:pr-10" : "md:pl-10"}`}
+            >
+              <p className="tracking-[2.5px] text-white/25 text text-[12px]">
+                {item.label}
               </p>
-            ))}
-          </div>
-        ) : (
-          <p className="text-white/55 max-w-2xl">
-            {caseData.brief.description}
-          </p>
-        )}
-      </Section>
-      <Section
-        background="dark"
-        fullWidth={false}
-        noPadding={true}
-        className="flex flex-col gap-8 justify-between"
-      >
-        <p className="text-red flex gap-2 uppercase tracking-[2px] text-[10px] font-semibold items-center">
-          <span className="w-4 h-px bg-red" />
-          Sfeerimpressie
-        </p>
-        <div className="space-y-1 w-full">
-          <div className="grid grid-cols-3 grid-rows-2 gap-1">
-            <div className="bg-gray col-span-2 row-span-2 w-full h-full" />
-
-            <div className="bg-gray aspect-square w-full" />
-
-            <div className="bg-gray aspect-square w-full" />
-          </div>
-
-          <div className="grid grid-cols-3 gap-1">
-            <div className="bg-gray aspect-4/3 w-full" />
-
-            <div className="bg-gray aspect-4/3 w-full" />
-
-            <div className="bg-gray aspect-4/3 w-full" />
-          </div>
-        </div>
-      </Section>
-
-      <Section
-        background="dark"
-        fullWidth={false}
-        noPadding={false}
-        className="flex flex-col gap-8 justify-between"
-      >
-        <Header
-          title="Het proces."
-          subtitle="Hoe we dit hebben aangepakt"
-          style="light"
-          type="h3"
-          isSubHeading={true}
-        />
-        <ItemGrid cols={3}>
-          {caseData.process.map((step, index) => (
-            <StepItem
-              key={index}
-              style="dark"
-              amount={index + 1}
-              title={step.title}
-              description={step.description}
-            />
+              <h5>{String(item.value)}</h5>
+            </div>
           ))}
-        </ItemGrid>
-      </Section>
+        </Section>
+      )}
+      {hasBrief && (
+        <Section
+          background="dark"
+          fullWidth={false}
+          noPadding={false}
+          className="flex gap-8 justify-between max-md:flex-col"
+        >
+          <Header
+            title="Wat de klant wilde."
+            subtitle="De opdracht"
+            style="light"
+            type="h3"
+            isSubHeading={true}
+          />
 
-      <Section
-        background="dark"
-        fullWidth={false}
-        noPadding={false}
-        className="flex gap-8 justify-between max-md:flex-col"
-        noTopPadding={true}
-      >
-        <Header
-          title="Wat we hebben gedaan."
-          subtitle="Onze aanpak"
-          style="light"
-          type="h3"
-          isSubHeading={true}
-        />
-        {caseData.whatWeDid.description.includes("##") ? (
-          <div className="flex flex-col gap-2 max-w-2xl">
-            {caseData.whatWeDid.description.split("##").map((part, idx) => (
-              <p className="text-white/55" key={idx}>
-                {part.trim()}
-              </p>
-            ))}
-          </div>
-        ) : (
-          <p className="text-white/55 max-w-2xl">
-            {caseData.whatWeDid.description}
+          {briefDescription.includes("##") ? (
+            <div className="flex flex-col gap-2 max-w-2xl">
+              {briefDescription.split("##").map((part, idx) => (
+                <p className="text-white/55" key={idx}>
+                  {part.trim()}
+                </p>
+              ))}
+            </div>
+          ) : (
+            <p className="text-white/55 max-w-2xl">{briefDescription}</p>
+          )}
+        </Section>
+      )}
+      {hasPhotos && (
+        <Section
+          background="dark"
+          fullWidth={false}
+          noPadding={true}
+          className="flex flex-col gap-8 justify-between"
+        >
+          <p className="text-red flex gap-2 uppercase tracking-[2px] text-[10px] font-semibold items-center">
+            <span className="w-4 h-px bg-red" />
+            Sfeerimpressie
           </p>
-        )}
-      </Section>
+          <div className="space-y-1 w-full">
+            <div className="grid grid-cols-3 grid-rows-2 gap-1">
+              <div className="bg-gray col-span-2 row-span-2 w-full h-full" />
 
-      <Section
-        background="dark"
-        fullWidth={false}
-        noPadding={false}
-        className="flex flex-col gap-8 justify-between"
-        noTopPadding={true}
-      >
-        <Header
-          title="Het effect."
-          subtitle="resultaten"
-          style="light"
-          type="h3"
-          isSubHeading={true}
-        />
-        <ItemGrid cols={3}>
-          {caseData.effect.map((step, index) => (
-            <StepItem
-              key={index}
-              style="dark"
-              amount={null}
-              title={step.title}
-              data={step.data}
-            />
-          ))}
-        </ItemGrid>
-      </Section>
+              <div className="bg-gray aspect-square w-full" />
 
-      <Section
-        background="dark"
-        fullWidth={false}
-        noPadding={true}
-        className="flex flex-col gap-8 justify-between pb-32"
-      >
-        <p className="text-red flex gap-2 uppercase tracking-[2px] text-[10px] font-semibold items-center">
-          <span className="w-4 h-px bg-red" />
-          Bekijk het eindresultaat.
-        </p>
-        <div className="w-full aspect-video rounded-lg overflow-hidden border border-white/10">
-          <iframe
-            width="100%"
-            height="100%"
-            src={caseData.video.url}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </Section>
+              <div className="bg-gray aspect-square w-full" />
+            </div>
+
+            <div className="grid grid-cols-3 gap-1">
+              <div className="bg-gray aspect-4/3 w-full" />
+
+              <div className="bg-gray aspect-4/3 w-full" />
+
+              <div className="bg-gray aspect-4/3 w-full" />
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {hasProcess && (
+        <Section
+          background="dark"
+          fullWidth={false}
+          noPadding={true}
+          className="flex flex-col gap-8 justify-between"
+        >
+          <Header
+            title="Het proces."
+            subtitle="Hoe we dit hebben aangepakt"
+            style="light"
+            type="h3"
+            isSubHeading={true}
+          />
+          <ItemGrid cols={3}>
+            {processItems.map((step, index) => (
+              <StepItem
+                key={index}
+                style="dark"
+                amount={index + 1}
+                title={step.title}
+                description={step.description}
+              />
+            ))}
+          </ItemGrid>
+        </Section>
+      )}
+
+      {hasWhatWeDid && (
+        <Section
+          background="dark"
+          fullWidth={false}
+          noPadding={false}
+          className="flex gap-8 justify-between max-md:flex-col"
+          noTopPadding={true}
+        >
+          <Header
+            title="Wat we hebben gedaan."
+            subtitle="Onze aanpak"
+            style="light"
+            type="h3"
+            isSubHeading={true}
+          />
+          {whatWeDidDescription.includes("##") ? (
+            <div className="flex flex-col gap-2 max-w-2xl">
+              {whatWeDidDescription.split("##").map((part, idx) => (
+                <p className="text-white/55" key={idx}>
+                  {part.trim()}
+                </p>
+              ))}
+            </div>
+          ) : (
+            <p className="text-white/55 max-w-2xl">{whatWeDidDescription}</p>
+          )}
+        </Section>
+      )}
+
+      {hasEffect && (
+        <Section
+          background="dark"
+          fullWidth={false}
+          noPadding={false}
+          className="flex flex-col gap-8 justify-between"
+          noTopPadding={true}
+        >
+          <Header
+            title="Het effect."
+            subtitle="resultaten"
+            style="light"
+            type="h3"
+            isSubHeading={true}
+          />
+          <ItemGrid cols={3}>
+            {effectItems.map((step, index) => (
+              <StepItem
+                key={index}
+                style="dark"
+                amount={null}
+                title={step.title}
+                data={step.data}
+              />
+            ))}
+          </ItemGrid>
+        </Section>
+      )}
+
+      {hasVideo && (
+        <Section
+          background="dark"
+          fullWidth={false}
+          noPadding={true}
+          className="flex flex-col gap-8 justify-between pb-32"
+        >
+          <p className="text-red flex gap-2 uppercase tracking-[2px] text-[10px] font-semibold items-center">
+            <span className="w-4 h-px bg-red" />
+            Bekijk het eindresultaat.
+          </p>
+          <div className="w-full aspect-video rounded-lg overflow-hidden border border-white/10">
+            <iframe
+              width="100%"
+              height="100%"
+              src={videoUrl}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </Section>
+      )}
 
       <Section
         background="light"
