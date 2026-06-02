@@ -59,15 +59,11 @@ export default function CaseItem({
         </p>
 
         <h4>{title}</h4>
-        <div className="max-h-0 opacity-0 group-hover:opacity-100 group-hover:max-h-40 overflow-hidden transition-all duration-700 ">
-          <p className="pr-20 text-white/55">{description}</p>
-
-          <Button
-            type="arrow"
-            className="absolute right-0 bottom-0 opacity-0 group-hover:opacity-100"
-          />
-        </div>
       </div>
+      <Button
+        type="arrow"
+        className="absolute right-8 bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      />
     </Link>
   );
 }

@@ -2,7 +2,7 @@ export const lindenItCase = {
   button: {
     slug: "linden-it",
     title: "Linden-IT",
-    src: "cases/image-1.jpg",
+    src: "cases/linden-it/main.jpg",
     rowspan: 1,
   },
   client: {
