@@ -3,6 +3,7 @@ import Button from "../button";
 
 type PriceItemProps = {
   plan: string;
+  summary?: string;
   price: string;
   period: string;
   features: string[];
@@ -12,6 +13,7 @@ type PriceItemProps = {
 
 export default function PriceItem({
   plan,
+  summary,
   price,
   period,
   features,
@@ -44,6 +46,13 @@ export default function PriceItem({
         >
           {period}
         </p>
+        {summary && (
+          <p
+            className={`text-sm mt-4 ${featured ? "text-white/90" : "text-white/70"}`}
+          >
+            {summary}
+          </p>
+        )}
       </div>
 
       <ul className={`flex flex-col gap-3 ${featured ? "flex-1" : ""}`}>
@@ -66,7 +75,7 @@ export default function PriceItem({
         href="/contact"
         type="button"
         color={featured ? "light" : "border"}
-        text="Plan gesprek"
+        text="Plan een kennismaking"
         className=" w-full justify-center"
       />
     </div>

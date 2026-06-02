@@ -7,46 +7,64 @@ import PriceItem from "../src/components/UI/priceItem";
 
 const pricingPlans = [
   {
-    plan: "Starter",
-    price: "€ 950",
-    period: "Eénmalig, ex. BTW",
+    plan: "Essential",
+    summary: "Perfect voor een sterke bedrijfsvideo of campagnevideo",
+    price: "€1950",
+    period: "Eenmalig, ex. BTW",
     features: [
-      "1 filmdag (halve dag)",
-      "1 video tot 2 minuten",
-      "Professionele montage & grading",
-      "Muzieklicentie inbegrepen",
+      "Strategische intake & conceptbespreking",
+      "Halve filmdag op locatie",
+      "1 professionele hoofdvideo",
+      "Professionele montage & kleurcorrectie",
+      "Rechtenvrije muziek inbegrepen",
       "2 revisierondes",
-      "Oplevering in 2 formaten",
+      "Oplevering in meerdere formaten",
+      "Geschikt voor website, LinkedIn en presentaties",
+      "Ideaal voor bedrijven die hun merk professioneel willen presenteren met een krachtige video.",
     ],
   },
   {
-    plan: "Studio",
-    price: "€ 2.250",
-    period: "Eénmalig, ex. BTW",
+    plan: "Growth",
+    summary:
+      "Voor bedrijven die structureel content willen creeren uit een productiedag",
+    price: "€3350",
+    period: "Eenmalig, ex. BTW",
     features: [
-      "1 volledige filmdag",
-      "3 video's (diverse formaten)",
-      "Concept & storyboard inbegrepen",
-      "Kleurcorrectie & grading",
-      "Motion graphics & tekstlagen",
-      "Muzieklicentie inbegrepen",
+      "Strategische intake & contentplan",
+      "Volledige filmdag op locatie",
+      "1 hero-video (campagne of bedrijfsfilm)",
+      "3 uitgewerkte video's voor verschillende doeleinden",
+      "Meerdere social media snippets uit dezelfde shoot",
+      "Professionele montage & kleurcorrectie",
+      "Motion graphics & ondertiteling",
+      "Rechtenvrije muziek inbegrepen",
       "3 revisierondes",
-      "Oplevering in 5 formaten",
+      "Oplevering in alle relevante formaten",
+      "Content voor LinkedIn, Instagram, website en advertenties",
+      "Ideaal voor bedrijven die meerdere kanalen tegelijk willen vullen met professionele content.",
     ],
     featured: true,
     badge: "Meest gekozen",
   },
   {
-    plan: "Maandelijks pakket",
-    price: "€ 1.450",
-    period: "Per maand, ex. BTW",
+    plan: "Content partner",
+    summary:
+      "Voor bedrijven die structureel zichtbaar willen zijn en elke maand nieuwe content nodig hebben voor social media, marketing en recruitment.",
+    price: "Vanaf € 1.450 p.m.",
+    period: "Ex. BTW",
     features: [
-      "2 filmdagen per maand",
-      "8–12 social videos per maand",
-      "Content strategie inbegrepen",
-      "Prioriteit planning",
-      "Maandelijks content kalender",
-      "Dedicated contactpersoon",
+      "Maandelijkse contentstrategie sessie",
+      "1 of meerdere filmdagen per maand",
+      "Doorlopende contentplanning",
+      "Contentkalender inbegrepen",
+      "Social video's voor meerdere platformen",
+      "Campagne- en merkcontent",
+      "Prioriteit in planning & productie",
+      "Snelle doorlooptijden",
+      "Vast aanspreekpunt",
+      "Doorlopende optimalisatie op basis van resultaten",
+      "Contentpartner in plaats van losse leverancier",
+      "Ideaal voor bedrijven die continu zichtbaar willen zijn zonder zelf content te hoeven organiseren.",
     ],
   },
 ];
@@ -54,9 +72,9 @@ const pricingPlans = [
 const steps = [
   {
     step: "Stap 01",
-    title: "Kennismaking & Intake",
+    title: "Kennismaking & intake",
     description:
-      "We plannen een vrijblijvend gesprek — telefonisch of op locatie in Purmerend. We leren uw merk, uw doelen en uw doelgroep kennen. Geen standaard intake, maar een echte conversatie over wat u wilt bereiken.",
+      "We plannen een vrijblijvend gesprek - telefonisch of op locatie. We leren uw merk, uw doelen en doelgroep kennen. Geen standaard intake maar een echt gesprek die de basis legt voor onze samenwerking.",
   },
   {
     step: "Stap 02",
@@ -68,11 +86,11 @@ const steps = [
     step: "Stap 03",
     title: "Productie",
     description:
-      "Filmdag(en) met professionele cinematografische apparatuur. Van belichting tot geluid — wij zorgen voor een professionele set-up. U kunt zich volledig focussen op uw rol; wij regelen de rest.",
+      "Filmdagen met professionele camera-apparatuur, waarbij wij het volledige technische traject uit handen nemen. Van belichting en camera tot geluid. Alles wordt zorgvuldig verzorgd met de juiste gear en expertise. Zo kunt u zich volledig richten op uw rol, terwijl wij zorgen voor een soepel draaiende productie en het eindresultaat.",
   },
   {
     step: "Stap 04",
-    title: "Post-productie",
+    title: "Post - productie",
     description:
       "Professionele montage, kleurcorrectie, muziek en motion graphics. U ontvangt een concept-edit voor feedback. Twee rondes revisie zijn altijd inbegrepen.",
   },
@@ -137,7 +155,7 @@ export default function ProcessAndPricing() {
         >
           <div className="flex flex-col gap-4">
             <Header
-              title="Kies uw pakket."
+              title="KIES UW PAKKET"
               subtitle="Transparante prijzen"
               style="light"
               type="h2"
@@ -145,7 +163,7 @@ export default function ProcessAndPricing() {
             />
             <p className="text-white/55 max-w-xl">
               Alle pakketten inclusief concept, productie en post-productie.
-              Prijzen exclusief BTW. Maatwerk altijd mogelijk.
+              Prijzen exclusief BTW. Maatwerk is altijd mogelijk.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
@@ -162,11 +180,13 @@ export default function ProcessAndPricing() {
         >
           <h2>Twijfelt u nog?</h2>
           <p>
-            Een kennismakingsgesprek is altijd gratis en vrijblijvend. Wij
-            denken graag met u mee.
+            Een uniek verhaal vraagt soms om een unieke aanpak. Niet ieder merk
+            past in een standaard pakket. Daarom ontwikkelen wij ook
+            maatwerkconcepten voor campagnes, employer branding, events,
+            documentaires en doorlopende contentproducties.
           </p>
           <Button
-            text="Gratis gesprek plannen"
+            text="Bespreek uw project"
             type="button"
             href="/contact"
             color="light"
