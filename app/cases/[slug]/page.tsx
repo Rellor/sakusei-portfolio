@@ -80,6 +80,8 @@ export default async function CasePage({ params }: Props) {
     hasValue(photos?.subs) ||
     hasValue(photos?.bottom);
 
+  const toImageSrc = (src: string) => (src.startsWith("/") ? src : `/${src}`);
+
   return (
     <div>
       <Section
@@ -162,50 +164,72 @@ export default async function CasePage({ params }: Props) {
           <div className="space-y-1 w-full">
             <div className="grid grid-cols-3 grid-rows-2 gap-1">
               <Image
-                src={photos?.main || "cases/placeholder-main.jpg"}
+                src={toImageSrc(photos?.main || "cases/placeholder-main.jpg")}
                 alt="Main photo"
                 width={800}
                 height={600}
+                sizes="(max-width: 768px) 100vw, 66vw"
+                quality={95}
                 className="bg-gray col-span-2 row-span-2 w-full h-full object-cover"
               />
 
               <Image
-                src={photos?.subs?.[0] || "cases/placeholder-sub1.jpg"}
+                src={toImageSrc(
+                  photos?.subs?.[0] || "cases/placeholder-sub1.jpg",
+                )}
                 alt="Sub photo 1"
                 width={400}
                 height={400}
+                sizes="(max-width: 768px) 50vw, 22vw"
+                quality={92}
                 className="bg-gray aspect-square w-full object-cover"
               />
 
               <Image
-                src={photos?.subs?.[1] || "cases/placeholder-sub2.jpg"}
+                src={toImageSrc(
+                  photos?.subs?.[1] || "cases/placeholder-sub2.jpg",
+                )}
                 alt="Sub photo 2"
                 width={400}
                 height={400}
+                sizes="(max-width: 768px) 50vw, 22vw"
+                quality={92}
                 className="bg-gray aspect-square w-full object-cover"
               />
             </div>
 
             <div className="grid grid-cols-3 gap-1">
               <Image
-                src={photos?.bottom?.[0] || "cases/placeholder-bottom1.jpg"}
+                src={toImageSrc(
+                  photos?.bottom?.[0] || "cases/placeholder-bottom1.jpg",
+                )}
                 alt="Bottom photo 1"
                 width={400}
                 height={300}
+                sizes="(max-width: 768px) 33vw, 22vw"
+                quality={90}
                 className="bg-gray aspect-4/3 w-full object-cover"
               />
               <Image
-                src={photos?.bottom?.[1] || "cases/placeholder-bottom2.jpg"}
+                src={toImageSrc(
+                  photos?.bottom?.[1] || "cases/placeholder-bottom2.jpg",
+                )}
                 alt="Bottom photo 2"
                 width={400}
                 height={300}
+                sizes="(max-width: 768px) 33vw, 22vw"
+                quality={90}
                 className="bg-gray aspect-4/3 w-full object-cover"
               />
               <Image
-                src={photos?.bottom?.[2] || "cases/placeholder-bottom3.jpg"}
+                src={toImageSrc(
+                  photos?.bottom?.[2] || "cases/placeholder-bottom3.jpg",
+                )}
                 alt="Bottom photo 3"
                 width={400}
                 height={300}
+                sizes="(max-width: 768px) 33vw, 22vw"
+                quality={90}
                 className="bg-gray aspect-4/3 w-full object-cover"
               />
             </div>
