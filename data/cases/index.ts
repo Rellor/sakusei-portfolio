@@ -9,9 +9,11 @@ export type Case = {
 import { techflowCase } from "./techflow-bv-detailed";
 import { kapsalonPrestigeCase } from "./kapsalon-prestige-detailed";
 import { tattooStudioInkCase } from "./tattoo-studio-ink-detailed";
+import { lindenItCase } from "./linden-it-detailed";
 
 export const detailedCases = {
   techflow: techflowCase,
   kapsalonPrestige: kapsalonPrestigeCase,
   tattooStudioInk: tattooStudioInkCase,
+  lindenIt: lindenItCase,
 };
