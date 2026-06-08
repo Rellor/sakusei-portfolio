@@ -48,7 +48,7 @@ export default function CaseItem({
       className={`${usedStyle} aspectStyle relative flex items-end md:p-10 p-4 group overflow-hidden`}
     >
       {/* Default gradient */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/85 md:via-black/50 via-black/75 to-transparent transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/50 md:via-black/35 via-black/50 to-transparent transition-opacity duration-300" />
 
       {/* Hover gradient */}
       <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
