@@ -72,7 +72,16 @@ export default async function CasePage({ params }: Props) {
   const hasWhatWeDid = hasValue(whatWeDidDescription);
   const hasProcess = processItems.length > 0;
   const hasEffect = effectItems.length > 0;
-  const videoUrl = "video" in caseData ? caseData.video?.url : undefined;
+  const video =
+    "video" in caseData &&
+    caseData.video &&
+    typeof caseData.video === "object"
+      ? caseData.video
+      : undefined;
+  const videoUrl =
+    video && "url" in video && typeof video.url === "string"
+      ? video.url
+      : undefined;
   const hasVideo = hasValue(videoUrl);
   const photos = "photos" in caseData ? caseData.photos : undefined;
   const hasPhotos =

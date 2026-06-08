@@ -30,4 +30,14 @@ export const thimoDerksCase = {
       data: "22,5K",
     },
   ],
+
+  photos: {
+    main: "/cases/thimo-derks/main.jpg",
+    subs: ["/cases/thimo-derks/sub1.jpg", "/cases/thimo-derks/sub2.jpg"],
+    bottom: [
+      "/cases/thimo-derks/bottom1.jpg",
+      "/cases/thimo-derks/bottom2.jpg",
+      "/cases/thimo-derks/bottom3.jpg",
+    ],
+  },
 };

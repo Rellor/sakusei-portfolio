@@ -13,9 +13,6 @@ import { lindenItCase } from "./linden-it-detailed";
 import { thimoDerksCase } from "./thimo-derks-detailed";
 
 export const detailedCases = {
-  techflow: techflowCase,
-  kapsalonPrestige: kapsalonPrestigeCase,
-  tattooStudioInk: tattooStudioInkCase,
   lindenIt: lindenItCase,
   thimoDerks: thimoDerksCase,
 };
