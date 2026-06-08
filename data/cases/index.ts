@@ -7,6 +7,7 @@ export type Case = {
 };
 
 import { esnCase } from "./esn-detailed";
+import { carlaFrigoCase } from "./carla-frigo-detailed";
 import { lindenItCase } from "./linden-it-detailed";
 import { paperstraightCase } from "./paperstraight-detailed";
 import { santaniCase } from "./santani-detailed";
@@ -15,6 +16,7 @@ import { kapsalonPrestigeCase } from "./test/kapsalon-prestige-detailed";
 
 export const detailedCases = {
   //esn: esnCase,
+  carlaFrigo: carlaFrigoCase,
   lindenIt: lindenItCase,
   paperstraight: paperstraightCase,
   santani: santaniCase,
