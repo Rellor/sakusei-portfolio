@@ -162,7 +162,7 @@ export default async function CasePage({ params }: Props) {
             Sfeerimpressie
           </p>
           <div className="space-y-1 w-full">
-            <div className="grid grid-cols-3 grid-rows-2 gap-1">
+            {/* <div className="grid grid-cols-3 grid-rows-2 gap-1">
               <Image
                 src={toImageSrc(photos?.main || "cases/placeholder-main.jpg")}
                 alt="Main photo"
@@ -196,9 +196,40 @@ export default async function CasePage({ params }: Props) {
                 quality={92}
                 className="bg-gray aspect-square w-full object-cover"
               />
-            </div>
+            </div> */}
 
             <div className="grid grid-cols-3 gap-1">
+              <Image
+                src={toImageSrc(photos?.main || "cases/placeholder-main.jpg")}
+                alt="Bottom photo 1"
+                width={400}
+                height={300}
+                sizes="(max-width: 768px) 33vw, 22vw"
+                quality={90}
+                className="bg-gray aspect-4/3 w-full object-cover"
+              />
+              <Image
+                src={toImageSrc(
+                  photos?.subs?.[0] || "cases/placeholder-sub1.jpg",
+                )}
+                alt="Bottom photo 2"
+                width={400}
+                height={300}
+                sizes="(max-width: 768px) 33vw, 22vw"
+                quality={90}
+                className="bg-gray aspect-4/3 w-full object-cover"
+              />
+              <Image
+                src={toImageSrc(
+                  photos?.subs?.[1] || "cases/placeholder-sub2.jpg",
+                )}
+                alt="Bottom photo 3"
+                width={400}
+                height={300}
+                sizes="(max-width: 768px) 33vw, 22vw"
+                quality={90}
+                className="bg-gray aspect-4/3 w-full object-cover"
+              />
               <Image
                 src={toImageSrc(
                   photos?.bottom?.[0] || "cases/placeholder-bottom1.jpg",
