@@ -48,9 +48,9 @@ export default function Contact() {
               </span>
               <a
                 className="hover:text-red transition-all duration-300 w-fit"
-                href="mailto:info@sakusei.nl"
+                href="mailto:julian@sakusei-studio.com"
               >
-                info@sakusei.nl
+                julian@sakusei-studio.com
               </a>
             </li>
 
@@ -60,7 +60,7 @@ export default function Contact() {
               </span>
               <a
                 className="hover:text-red transition-all duration-300 w-fit"
-                href=""
+                href="https://www.google.com/maps/place/Purmerend,+Noord-Holland"
               >
                 Purmerend, Noord-Holland
               </a>
