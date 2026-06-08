@@ -2,7 +2,7 @@ export const thimoDerksCase = {
   button: {
     slug: "thimo-derks",
     title: "Thimo Derks",
-    src: "cases/image-3.jpg",
+    src: "cases/thimo-derks/bottom1.jpg",
     rowspan: 1,
   },
   client: {
