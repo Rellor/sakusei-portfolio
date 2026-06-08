@@ -7,9 +7,11 @@ export type Case = {
 };
 
 import { lindenItCase } from "./linden-it-detailed";
+import { santaniCase } from "./santani-detailed";
 import { thimoDerksCase } from "./thimo-derks-detailed";
 
 export const detailedCases = {
   lindenIt: lindenItCase,
+  santani: santaniCase,
   thimoDerks: thimoDerksCase,
 };
