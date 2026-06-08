@@ -39,7 +39,9 @@ export default function MobileNavigation() {
       } fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-5 lg:hidden`}
     >
       <div className="flex items-center justify-between">
-        <Image src="/fullLogoLight.svg" alt="Logo" width={120} height={120} />
+        <a href="/" className="flex items-center gap-2">
+          <Image src="/fullLogoLight.svg" alt="Logo" width={120} height={120} />
+        </a>
 
         <button
           type="button"
