@@ -76,10 +76,10 @@ h5 {
   transition: transform 0.5s ease-out;
 }
 
-.aspect-long .aspectStyle {
+.grid-aspect-long .aspectStyle {
   @apply aspect-3/4;
 }
 
-.aspect-video .aspectStyle {
+.grid-aspect-video .aspectStyle {
   @apply aspect-560/400;
 }

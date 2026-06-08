@@ -26,8 +26,8 @@ export default function ItemGrid({
     auto-rows-fr
     ${gridColsMap[cols]}
     ${className}
-    ${aspectRatio === "video" ? "aspect-video" : ""}
-    ${aspectRatio === "long" ? "md:aspect-long aspect-video" : ""}
+    ${aspectRatio === "video" ? "grid-aspect-video" : ""}
+    ${aspectRatio === "long" ? "md:grid-aspect-long grid-aspect-video" : ""}
     max-md:grid-cols-1
   `;
 
