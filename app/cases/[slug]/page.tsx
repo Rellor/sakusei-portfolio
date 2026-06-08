@@ -44,10 +44,53 @@ export default async function CasePage({ params }: Props) {
   const briefDescription = caseData.brief?.description ?? "";
   const whatWeDidDescription = caseData.whatWeDid?.description ?? "";
 
+  const renderRichText = (text: string, className = "text-white/55") => {
+    const parts = text
+      .split("##")
+      .map((p) => p.trim())
+      .filter(Boolean);
+    const nodes: React.ReactNode[] = [];
+    let listItems: string[] = [];
+
+    const flushList = (key: string) => {
+      if (listItems.length > 0) {
+        nodes.push(
+          <ul key={key} className="list-disc list-inside flex flex-col gap-1">
+            {listItems.map((item, i) => (
+              <li key={i} className={className}>
+                {item}
+              </li>
+            ))}
+          </ul>,
+        );
+        listItems = [];
+      }
+    };
+
+    parts.forEach((part, idx) => {
+      if (part.startsWith("--")) {
+        listItems.push(part.slice(2).trim());
+      } else {
+        flushList(`list-${idx}`);
+        nodes.push(
+          <p key={idx} className={`${className} max-w-2xl`}>
+            {part}
+          </p>,
+        );
+      }
+    });
+    flushList("list-end");
+    return <div className="flex flex-col gap-2 max-w-2xl">{nodes}</div>;
+  };
+
   const projectItems = [
     { label: "Type", value: caseData.project?.type },
     { label: "Year", value: caseData.project?.year },
-    { label: "Duration", value: caseData.project?.duration },
+    {
+      label: "Duration",
+      value:
+        "duration" in caseData.project ? caseData.project.duration : undefined,
+    },
     {
       label: "Platforms",
       value: caseData.project?.platforms?.length
@@ -73,9 +116,7 @@ export default async function CasePage({ params }: Props) {
   const hasProcess = processItems.length > 0;
   const hasEffect = effectItems.length > 0;
   const video =
-    "video" in caseData &&
-    caseData.video &&
-    typeof caseData.video === "object"
+    "video" in caseData && caseData.video && typeof caseData.video === "object"
       ? caseData.video
       : undefined;
   const videoUrl =
@@ -146,17 +187,7 @@ export default async function CasePage({ params }: Props) {
             isSubHeading={true}
           />
 
-          {briefDescription.includes("##") ? (
-            <div className="flex flex-col gap-2 max-w-2xl">
-              {briefDescription.split("##").map((part, idx) => (
-                <p className="text-white/55" key={idx}>
-                  {part.trim()}
-                </p>
-              ))}
-            </div>
-          ) : (
-            <p className="text-white/55 max-w-2xl">{briefDescription}</p>
-          )}
+          {renderRichText(briefDescription)}
         </Section>
       )}
       {hasPhotos && (
@@ -320,17 +351,7 @@ export default async function CasePage({ params }: Props) {
             type="h3"
             isSubHeading={true}
           />
-          {whatWeDidDescription.includes("##") ? (
-            <div className="flex flex-col gap-2 max-w-2xl">
-              {whatWeDidDescription.split("##").map((part, idx) => (
-                <p className="text-white/55" key={idx}>
-                  {part.trim()}
-                </p>
-              ))}
-            </div>
-          ) : (
-            <p className="text-white/55 max-w-2xl">{whatWeDidDescription}</p>
-          )}
+          {renderRichText(whatWeDidDescription)}
         </Section>
       )}
 
