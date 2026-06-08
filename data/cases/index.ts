@@ -6,9 +6,6 @@ export type Case = {
   src: string;
 };
 
-import { techflowCase } from "./techflow-bv-detailed";
-import { kapsalonPrestigeCase } from "./kapsalon-prestige-detailed";
-import { tattooStudioInkCase } from "./tattoo-studio-ink-detailed";
 import { lindenItCase } from "./linden-it-detailed";
 import { thimoDerksCase } from "./thimo-derks-detailed";
 
