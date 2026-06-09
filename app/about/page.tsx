@@ -154,7 +154,7 @@ export default function About() {
           <Button
             text="Contact opnemen"
             type="button"
-            href="/contact"
+            href="https://koalendar.com/e/sakusei"
             color="light"
             className="max-md:w-full max-md:justify-center"
           />

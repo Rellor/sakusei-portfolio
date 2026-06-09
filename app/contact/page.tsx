@@ -80,20 +80,27 @@ export default function Contact() {
               <div>
                 <a
                   className="hover:text-red transition-all duration-300 w-fit"
-                  href="https://www.linkedin.com/company/sakusei-studio/"
+                  href="https://www.linkedin.com/company/128554168/admin/inbox/"
                 >
                   LinkedIn
                 </a>
                 <span className="mx-2">|</span>
                 <a
                   className="hover:text-red transition-all duration-300 w-fit"
-                  href="https://www.instagram.com/sakusei.studio/"
+                  href="https://www.instagram.com/sakusei_studio?igsh=MWV6ejV4cDF1bGZnbA=="
                 >
                   Instagram
                 </a>
               </div>
             </li>
           </ul>
+          <Button
+            text="Plan een gesprek"
+            type="button"
+            href="https://koalendar.com/e/sakusei"
+            color="light"
+            className="max-md:w-full max-md:justify-center"
+          />
         </Section>
       </div>
     </div>

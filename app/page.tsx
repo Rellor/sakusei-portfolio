@@ -212,7 +212,7 @@ export default function Home() {
           <Button
             text="Neem contact op"
             type="button"
-            href="/contact"
+            href="https://koalendar.com/e/sakusei"
             color="light"
             className="max-md:w-full max-md:justify-center"
           />

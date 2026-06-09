@@ -63,7 +63,7 @@ export default function Cases() {
           <Button
             text="Start een project"
             type="button"
-            href="/contact"
+            href="https://koalendar.com/e/sakusei"
             color="light"
             className="max-md:w-full max-md:justify-center"
           />

@@ -188,7 +188,7 @@ export default function ProcessAndPricing() {
           <Button
             text="Bespreek uw project"
             type="button"
-            href="/contact"
+            href="https://koalendar.com/e/sakusei"
             color="light"
             className="max-md:w-full max-md:justify-center"
           />
