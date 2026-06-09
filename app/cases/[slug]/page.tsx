@@ -341,8 +341,8 @@ export default async function CasePage({ params }: Props) {
           background="dark"
           fullWidth={false}
           noPadding={false}
-          className="flex gap-8 justify-between max-md:flex-col"
-          noTopPadding={true}
+          className="flex gap-8 justify-between max-md:flex-col md:pt-32 pt-16"
+          noTopPadding={hasPhotos ? true : hasProcess ? false : true}
         >
           <Header
             title="Wat we hebben gedaan."
