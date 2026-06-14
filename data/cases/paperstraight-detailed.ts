@@ -32,4 +32,7 @@ export const paperstraightCase = {
       "/cases/paperstraight/bottom3.jpg",
     ],
   },
+  video: {
+    url: "https://www.youtube.com/embed/gxhYS-VVJV0?si=q7V0CuRllSKbJz7z",
+  },
 };

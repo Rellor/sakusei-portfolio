@@ -40,4 +40,8 @@ export const carlaFrigoCase = {
       "/cases/carla-frigo/bottom3.jpg",
     ],
   },
+
+  video: {
+    url: "https://www.youtube.com/embed/m1_jd4twltA?si=hNO6ctbJtdBWT6Cp",
+  },
 };

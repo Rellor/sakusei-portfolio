@@ -40,4 +40,7 @@ export const thimoDerksCase = {
       "/cases/thimo-derks/bottom3.jpg",
     ],
   },
+  video: {
+    url: "https://www.youtube.com/embed/92okX7L0Trc?si=zrrwj1iTh8xDiRym",
+  },
 };

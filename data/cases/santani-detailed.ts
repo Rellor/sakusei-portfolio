@@ -39,4 +39,7 @@ export const santaniCase = {
       "/cases/santani/bottom3.jpg",
     ],
   },
+  video: {
+    url: "https://www.youtube.com/embed/Yff6yfCWU1A?si=MqCUMJjC56KDdkpI",
+  },
 };
